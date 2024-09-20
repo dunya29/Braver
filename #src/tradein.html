@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {   
+    "title": "Trade-In"
+})
+
+<body>
+    <div class="wrap">
+        @@include('_header.html', {
+            "main": false, "light": true,
+            "activeclass1": "",
+            "activeclass2": "",
+            "activeclass3": "",
+            "activeclass4": "",
+            "activeclass5": "",
+            "activeclass6": "",
+        })
+        <!--main-->  
+        <main class="main">
+            <!--breadcrumbs-->
+            <div class="breadcrumbs breadcrumbs--pos fixed-block">
+                <div class="container">
+                    <ul>
+                        <li><a href="#" class="link">Главная</a></li>
+                        <li>Trade-In</li>
+                    </ul>
+                </div>
+            </div>
+            <!--intro-->
+            <div class="section-sm intro">
+                <div class="container">
+                    <div class="media-cover">
+                        <picture>
+                            <source srcset="img/tradein-bg.webp" media="(min-width: 767.98px)" type="image/webp">
+                            <source srcset="img/tradein-bg.jpg" media="(min-width: 767.98px)">
+                            <source srcset="img/tradein-bg-mob.webp" type="image/webp">
+                            <source srcset="img/tradein-bg-mob.jpg"> 
+                            <img src="img/tradein-bg.jpg" alt="Trade-In BRAVER" data-animation="scale">
+                        </picture>
+                    </div>
+                    <div class="intro__content">
+                        <h1>Trade-In</h1>
+                    </div>
+                </div>
+            </div>
+            <!--about-->
+            <section class="section about about--tradein" data-animation="fadeUp">
+                 <div class="container">
+                     <div class="about__row">
+                         <h2>Трейд-Ин <span>- это</span></h2>
+                         <div class="about__content">
+                            <div class="about__txt about__txt--grid">
+                                <p>Трейд-Ин - это способ финансирования сделки, при котором покупатель отдает продавцу старую технику в зачет стоимости новой.</p>
+                                <p>В рамках специальной программы Трейд-Ин клиенты могут расширить или обновить свой автопарк, реализовав старую технику в минимальные сроки.</p>
+                                <p>При обмене Вы оплачиваете только разницу между стоимостью выбранной техники и оценочной стоимостью Вашего транспортного средства.</p>
+                                <button class="btn main-btn main-btn--dark mod-open-btn" data-modal="feedback-mod">
+                                   <span>Оставить заявку</span>
+                                   <div class="main-btn__icon"><svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg></div>
+                               </button>
+                            </div>
+                         </div>
+                     </div>
+                 </div>
+            </section>
+            <!--accord-block-->
+            <section class="section accord-block" data-animation="fadeUp">
+                <div class="container">
+                    <div class="sec-top">
+                        <h2>Наши партнеры</h2>
+                    </div>
+                    <div class="accord-block__items">
+                        @@include("_item-partner.html", {"subtitle": "Продажа, обмен, выкуп грузовой техники", "title": "Глобал Трак Сейлс"})
+                        @@include("_item-partner.html", {"subtitle": "Продажа, обмен, выкуп грузовой техники", "title": "Глобал Трак Сейлс"})
+                        @@include("_item-partner.html", {"subtitle": "Продажа, обмен, выкуп грузовой техники", "title": "Глобал Трак Сейлс"})
+                        @@include("_item-partner.html", {"subtitle": "Продажа, обмен, выкуп грузовой техники", "title": "Глобал Трак Сейлс"})
+                        @@include("_item-partner.html", {"subtitle": "Продажа, обмен, выкуп грузовой техники", "title": "Глобал Трак Сейлс"})
+                    </div>
+                </div>
+            </section>
+            @@include('_faq.html')
+            @@include('_form-block.html')
+        </main>
+        @@include('_footer.html', {"main": false})
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+    @@include('_map.html')
+</body>
+
+</html>

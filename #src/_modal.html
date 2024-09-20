@@ -1,0 +1,158 @@
+<!--feedback-mod-->
+<modal class="modal feedback-mod" id="feedback-mod">
+    <div class="custom-scroll modal__overlay">
+        <div class="modal__content">
+            <button type="button" class="btn btn-close"><svg><use xlink:href="img/icons/sprite.svg#close"></use></svg></button>
+            <div class="custom-scroll">
+                <div class="modal__top">
+                    <h3>оставить заявку</h3>
+                    <p>Оставьте Ваши данные, и мы свяжемся с вами в течение 15 минут</p>
+                </div>
+                <form class="form" onsubmit="event.preventDefault();formSuccess(this)">
+                    <div class="item-form">
+                        <input type="text" placeholder="Ваше имя">
+                        <span class="item-form__error"></span>
+                    </div>
+                    <div class="item-form">
+                        <input type="tel" placeholder="+7 (___) ___-__-__">
+                        <span class="item-form__error"></span>
+                    </div>
+                    <div class="item-form">
+                        <input type="email" placeholder="Email">
+                        <span class="item-form__error"></span>
+                    </div>
+                    <div class="item-form">
+                        <textarea placeholder="Ваш комментарий" oninput="this.style.height = '';this.style.height = this.scrollHeight + 'px'"></textarea>
+                    </div>
+                    <div class="form__footer">
+                        <label class="item-checkbox">
+                            <input type="checkbox">
+                            <span>Нажимая на кнопку, я принимаю условия <a href="#" target="_blank">Политики конфиденциальности</a></span>
+                        </label>
+                        <button type="submit" class="btn main-btn main-btn--dark">
+                            <span>Отправить</span>
+                            <div class="main-btn__icon"><svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg></div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</modal>
+<!--callback-mod-->
+<modal class="modal callback-mod" id="callback-mod">
+    <div class="custom-scroll modal__overlay">
+        <div class="modal__content">
+            <button type="button" class="btn btn-close"><svg><use xlink:href="img/icons/sprite.svg#close"></use></svg></button>
+            <div class="custom-scroll">
+                <div class="modal__top">
+                    <h3>Заказать звонок</h3>
+                    <p>Оставьте телефон, и мы свяжемся с Вами в течение 15 минут</p>
+                </div>
+                <form class="form" onsubmit="event.preventDefault();formSuccess(this)">
+                    <div class="form__grid">
+                        <div class="item-form">
+                            <input type="tel" placeholder="+7 (___) ___-__-__">
+                            <span class="item-form__error"></span>
+                        </div>
+                        <div class="item-form">
+                            <input type="text" placeholder="Название компании">
+                            <span class="item-form__error"></span>
+                        </div>
+                    </div>
+                    <div class="form__footer">
+                        <label class="item-checkbox">
+                            <input type="checkbox">
+                            <span>Нажимая на кнопку, я принимаю условия <a href="#" target="_blank">Политики конфиденциальности</a></span>
+                        </label>
+                        <button type="submit" class="btn main-btn main-btn--dark">
+                            <span>Отправить</span>
+                            <div class="main-btn__icon"><svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg></div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</modal>
+<!--review-mod-->
+<modal class="modal review-mod" id="review-mod">
+    <div class="custom-scroll modal__overlay">
+        <div class="modal__content">
+            <button type="button" class="btn btn-close"><svg><use xlink:href="img/icons/sprite.svg#close"></use></svg></button>
+            <div class="custom-scroll">
+                <div class="modal__top">
+                    <h3>оставить отзыв</h3>
+                </div>
+                <form class="form" onsubmit="event.preventDefault();formSuccess(this)">
+                    <div class="item-form">
+                        <input type="text" placeholder="Ваше имя">
+                        <span class="item-form__error">Ввведите имя</span>
+                    </div>
+                    <div class="item-form">
+                        <input type="text" placeholder="Название компании">
+                        <span class="item-form__error"></span>
+                    </div>
+                    <div class="item-form">
+                        <textarea placeholder="Ваш комментарий" oninput="this.style.height = '';this.style.height = this.scrollHeight + 'px'"></textarea>
+                        <span class="item-form__error"></span>
+                    </div>
+                    <div class="item-form file-form">
+                        <label>
+                            <input type="file" accept=".png,.jpg,.jpeg,.pdf,.doc,.docx">
+                            <span>Прикрепить документ с официальным отзывом</span>
+                        </label>
+                        <div class="file-form__items"></div>
+                        <div class="item-form__error"></div>
+                    </div>
+                    <div class="form__footer">
+                        <label class="item-checkbox">
+                            <input type="checkbox">
+                            <span>Нажимая на кнопку, я принимаю условия <a href="#" target="_blank">Политики конфиденциальности</a></span>
+                        </label>
+                        <button type="submit" class="btn main-btn main-btn--dark">
+                            <span>Оставить отзыв</span>
+                            <div class="main-btn__icon"><svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg></div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</modal>
+<!--success-mod-->
+<modal class="modal success-mod" id="success-mod">
+    <div class="custom-scroll modal__overlay">
+        <div class="modal__content">
+            <button type="button" class="btn btn-close"><svg><use xlink:href="img/icons/sprite.svg#close"></use></svg></button>
+            <div class="custom-scroll">
+                <div class="modal__top">
+                    <div class="modal__icon"><img src="img/icons/icon-success.svg" alt="Ошибка"></div>
+                    <h3>Заявка отправлена</h3>
+                    <p>Наш менеджер свяжется с Вами в течение 15 минут</p>
+                </div>
+                <button class="btn main-btn main-btn--dark modal__close">
+                    <span>Закрыть</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</modal>
+<!--error-mod-->
+<modal class="modal error-mod" id="error-mod">
+    <div class="custom-scroll modal__overlay">
+        <div class="modal__content">
+            <button type="button" class="btn btn-close"><svg><use xlink:href="img/icons/sprite.svg#close"></use></svg></button>
+            <div class="custom-scroll">
+                <div class="modal__top">
+                    <div class="modal__icon"><img src="img/icons/icon-error.svg" alt=""></div>
+                    <h3>что-то пошло не так</h3>
+                    <p>Попробуйте отправить заявку еще раз</p>
+                </div>
+                <button class="btn main-btn main-btn--dark modal__close">
+                    <span>Заполнить форму</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</modal>

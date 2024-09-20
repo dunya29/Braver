@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {   
+    "title": "О заводе"
+})
+
+<body>
+    <div class="wrap">
+        @@include('_header.html', {
+            "main": false, "light": true,
+            "activeclass1": "",
+            "activeclass2": "active",
+            "activeclass3": "",
+            "activeclass4": "",
+            "activeclass5": "",
+            "activeclass6": "",
+        })
+        <!--main-->  
+        <main class="main">
+            <!--intro-->
+            <section class="section-sm intro">
+                <div class="container">
+                    <div class="media-cover">
+                        <picture>
+                            <source srcset="img/about.webp" media="(min-width: 767.98px)" type="image/webp">
+                            <source srcset="img/about.jpg" media="(min-width: 767.98px)">
+                            <source srcset="img/about-mob.webp" type="image/webp">
+                            <source srcset="img/about-mob.jpg"> 
+                            <img src="img/about.jpg" alt="О заводе" data-animation="scale">
+                        </picture>
+                    </div>
+                    <div class="intro__content">
+                        <h1>О заводе</h1>
+                    </div>
+                </div>
+            </section>
+            <!--about-->
+            <section class="section about" data-animation="fadeUp">
+                <div class="container">
+                    <div class="about__row">
+                        <h2>Завод braver <span>- это</span></h2>
+                        <div class="about__content">
+                            <div class="about__txt about__txt--grid">
+                                <p>Каждый из нас понимает очевидную вещь: укрепление и развитие внутренней структуры предполагает независимые способы реализации системы обучения кадров, соответствующей насущным потребностям.</p>
+                                <p>С другой стороны, сложившаяся структура организации способствует повышению качества дальнейших направлений развития. Являясь всего лишь частью общей картины, предприниматели в сети интернет и по сей день остаются уделом либералов, которые жаждут быть ассоциативно распределены по отраслям.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about__row">
+                        <div class="about__stat">
+                            @@include("_item-info.html", {"nmb": "95%", "title": false, "txt": "клиентов удовлетворены качеством и надежностью техники Braver"})
+                            @@include("_item-info.html", {"nmb": "150", "title": false, "txt": "сервисных центров по всем регионам России"})
+                            @@include("_item-info.html", {"nmb": ">1 000", "title": false, "txt": "специалистов трудятся на заводе"})
+                            @@include("_item-info.html", {"nmb": ">900", "title": false, "txt": "полуприцепов произведено"})
+                            @@include("_item-info.html", {"nmb": "100%", "title": false, "txt": "полуприцепов Braver  проходят строгий контроль качества"})
+                        </div>
+                    </div>
+                    <div class="about__row about__row--imgBlock">
+                        <h3>НАША МИССИЯ - ОБЕСПЕЧИТЬ РЫНОК КАЧЕСТВЕННОЙ ПОЛУПРИЦЕПНОЙ ТЕХНИКОЙ ДЛЯ БЕЗОПАСНОЙ И ЭФФЕКТИВНОЙ ПЕРЕВОЗКИ ГРУЗОВ И СПЕЦТЕХНИКОЙ ДЛЯ СЕЛЬСКОГО ХОЗЯЙСТВА</h3>
+                        <div class="about__img about__img--l">
+                            <div class="media-cover">
+                                <img src="img/about-l.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="about__txt">
+                            <p>Мы работаем на благо наших клиентов и их бизнеса. Всегда открыты к обратной связи и каждый день работаем над тем, чтобы стать лучше для вас.</p>
+                            <p>Выбирая технику Braver, вы приобретаете надежного партнера, который будет вместе с вами достигать всех амбициозных целей, поставленных перед вашей компанией. </p>
+                        </div>
+                        <div class="about__img about__img--s">                          
+                            <div class="media-cover">
+                                <img src="img/about-s.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--gallery-->
+            <section class="section gallery" data-animation="fadeUp">
+                <div class="container">
+                    <div class="sec-top">
+                        <h2>галерея</h2>
+                        <div class="swiper-btns">
+                            <button class="nav-btn nav-btn--prev"><svg><use xlink:href="img/icons/sprite.svg#btn-prev"></use></svg></button>
+                            <button class="nav-btn nav-btn--next"><svg><use xlink:href="img/icons/sprite.svg#btn-next"></use></svg></button>
+                        </div>
+                    </div>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" data-fancybox="about_gall" data-src="img/content/gallery-1.jpg">
+                                <img src="img/content/gallery-1.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide" data-fancybox="about_gall" data-src="img/content/gallery-2.jpg">
+                                <img src="img/content/gallery-2.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide" data-fancybox="about_gall" data-src="img/content/gallery-3.jpg">
+                                <img src="img/content/gallery-3.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide" data-fancybox="about_gall" data-src="img/content/gallery-1.jpg">
+                                <img src="img/content/gallery-1.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            @@include('_accord-block.html',{"bot": false})
+            <!--team-->
+            <section class="section swiper6 team" data-animation="fadeUp">
+                <div class="container">
+                    <div class="sec-top">
+                        <h2>Наши сотрудники</h2>
+                        <div class="swiper-btns">
+                            <button class="nav-btn nav-btn--prev"><svg><use xlink:href="img/icons/sprite.svg#btn-prev"></use></svg></button>
+                            <button class="nav-btn nav-btn--next"><svg><use xlink:href="img/icons/sprite.svg#btn-next"></use></svg></button>
+                        </div>
+                    </div>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                @@include("_item-team.html",{"nmb": 1, "name": "Иванов Иван", "post": "Главный инженер"})
+                            </div>
+                            <div class="swiper-slide">
+                                @@include("_item-team.html",{"nmb": 2, "name": "Иванов Иван", "post": "Руководитель отдела"})
+                            </div>
+                            <div class="swiper-slide">
+                                @@include("_item-team.html",{"nmb": 3, "name": "Иванов Иван", "post": "Специалист"})
+                            </div>
+                            <div class="swiper-slide">
+                                @@include("_item-team.html",{"nmb": 4, "name": "Иванов Иван", "post": "Маркетолог"})
+                            </div>
+                            <div class="swiper-slide">
+                                @@include("_item-team.html",{"nmb": 5, "name": "Иванов Иван", "post": "Специалист"})
+                            </div>
+                            <div class="swiper-slide">
+                                @@include("_item-team.html",{"nmb": 2, "name": "Иванов Иван", "post": "Руководитель отдела"})
+                            </div>
+                            <div class="swiper-slide">
+                                @@include("_item-team.html",{"nmb": 3, "name": "Иванов Иван", "post": "Специалист"})
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--certs-->
+            <section class="section certs" data-animation="fadeUp">
+                <div class="container">
+                    <div class="sec-top">
+                        <h2>Документы и сертификаты</h2>
+                    </div>
+                    <div class="certs__items">
+                        @@include('_item-cert.html', {"nmb": 1, "title": "Общие правила перевозки грузов"})
+                        @@include('_item-cert.html', {"nmb": 1, "title": "Постановление правительства от 12 июля 2024"})
+                        @@include('_item-cert.html', {"nmb": 2, "title": "Сертификат №12"})
+                        @@include('_item-cert.html', {"nmb": 1, "title": "Экологическая политика Braver"})
+                        @@include('_item-cert.html', {"nmb": 3, "title": "Политика в области охраны труда Braver 2024"})
+                        @@include('_item-cert.html', {"nmb": 1, "title": "Сводная ведомость результатов СОУТ за 2023 год"})
+                    </div>
+                    <div class="sec-bot">
+                        <a href="#" class="btn main-btn main-btn--dark">
+                            <span>Смотреть все</span>
+                            <div class="main-btn__icon"><svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg></div>   
+                        </a>                       
+                    </div>
+                </div>
+            </section>
+            @@include('_faq.html')
+            @@include('_form-block.html')
+        </main>
+        @@include('_footer.html', {"main": false})
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>

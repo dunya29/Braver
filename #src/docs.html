@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {   
+    "title": "Документы и сертификаты"
+})
+
+<body>
+    <div class="wrap">
+        @@include('_header.html', {
+            "main": false, "light": false,
+            "activeclass1": "",
+            "activeclass2": "",
+            "activeclass3": "",
+            "activeclass4": "",
+            "activeclass5": "",
+            "activeclass6": "",
+        })
+        <!--main-->  
+        <main class="main">
+            @@include('_breadcrumbs.html', {
+                "page": "Документы и сертификаты",         
+            })
+            <!--certs-->
+            <section class="section certs" data-animation="fadeUp">
+                <div class="container">
+                    <div class="sec-top">
+                        <h1 class="h2">Документы и сертификаты</h1>
+                    </div>
+                    <div class="certs__items">
+                        @@include('_item-cert.html', {"nmb": 1, "title": "Общие правила перевозки грузов"})
+                        @@include('_item-cert.html', {"nmb": 1, "title": "Постановление правительства от 12 июля 2024"})
+                        @@include('_item-cert.html', {"nmb": 2, "title": "Сертификат №12"})
+                        @@include('_item-cert.html', {"nmb": 1, "title": "Экологическая политика Braver"})
+                        @@include('_item-cert.html', {"nmb": 3, "title": "Политика в области охраны труда Braver 2024"})
+                        @@include('_item-cert.html', {"nmb": 1, "title": "Сводная ведомость результатов СОУТ за 2023 год"})
+                    </div>
+                </div>
+            </section>
+            <!--accord-block-->
+            <section class="section accord-block" data-animation="fadeUp">
+                <div class="container">
+                    <div class="sec-top">
+                        <h2>Все документы</h2>
+                    </div>
+                    <div class="accord-block__items">
+                        @@include("_item-doc.html", {"type": "pdf", "title": "Постановление правительства от 12 июля 2024"})
+                        @@include("_item-doc.html", {"type": "pdf", "title": "Кодекс деловой этики Braver"})
+                        @@include("_item-doc.html", {"type": "pdf", "title": "Общие правила перевозки грузов"})
+                        @@include("_item-doc.html", {"type": "pdf", "title": "Соглашение о крупногабаритных перевозках"})
+                        @@include("_item-doc.html", {"type": "pdf", "title": "Постановление правительства от 12 июля 2024"})
+                        @@include("_item-doc.html", {"type": "pdf", "title": "Постановление правительства от 12 июля 2024"})
+                    </div>
+                    @@include('_pagination.html')
+                </div>
+            </section>
+            @@include('_form-block.html')
+        </main>
+        @@include('_footer.html', {"main": false})
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>

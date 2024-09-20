@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {   
+    "title": "Отзывы"
+})
+
+<body>
+    <div class="wrap">
+        @@include('_header.html', {
+            "main": false, "light": false,
+            "activeclass1": "",
+            "activeclass2": "",
+            "activeclass3": "",
+            "activeclass4": "",
+            "activeclass5": "",
+            "activeclass6": "",
+        })
+        <!--main-->  
+        <main class="main">
+            @@include('_breadcrumbs.html', {
+                "page": "Отзывы",         
+            })
+            <!--reviews-->
+            <section class="section has-btn reviews" data-animation="fadeUp">
+                <div class="container">
+                    <div class="sec-top">
+                        <h1 class="h2">Отзывы</h1>
+                        <button class="btn main-btn main-btn--dark mod-open-btn" data-modal="review-mod">
+                            <span>Оставить отзыв</span>
+                            <div class="main-btn__icon"><svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg></div>                                
+                        </button>
+                    </div>
+                    <div class="reviews__items">
+                        @@include('_item-review.html', {"short": false})
+                        @@include('_item-review.html', {"short": false})
+                        @@include('_item-review.html', {"short": true})
+                        @@include('_item-review.html', {"short": false})
+                        @@include('_item-review.html', {"short": false})
+                    </div>
+                    <div class="cat-bottom">                               
+                        <a href="#" class="btn main-btn main-btn--dark" onclick="()=>readMoreFunc()"><span>Показать еще</span></a>
+                        <!--pagination-->
+                        <nav class="pagination">
+                            <a class="pagination__nav" href="#"><svg><use href="img/icons/sprite.svg#btn-prev"></use></svg></a>
+                            <a class="pagination__link" href="#">1</a>
+                            <a class="pagination__link current" href="#">2</a>
+                            <a class="pagination__link" href="#">3</a>
+                            <a class="pagination__link" href="#">4</a>
+                            <a class="pagination__link" href="#">5</a>
+                            <span class="pagination__item">...</span>
+                            <a class="pagination__link" href="#">9</a>
+                            <a class="pagination__nav" href="#"><svg><use href="img/icons/sprite.svg#btn-next"></use></svg></a>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+            @@include('_form-block.html')
+        </main>
+        @@include('_footer.html', {"main": false})
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>

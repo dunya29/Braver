@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {   
+    "title": "Новости"
+})
+
+<body>
+    <div class="wrap">
+        @@include('_header.html', {
+            "main": false, "light": false,
+            "activeclass1": "",
+            "activeclass2": "",
+            "activeclass3": "",
+            "activeclass4": "",
+            "activeclass5": "",
+            "activeclass6": ""
+        })
+        <!--main-->  
+        <main class="main">
+            @@include('_breadcrumbs.html', {
+                "page": "Новости",         
+            })
+            <!--news-->
+            <section class="section news" data-animation="fadeUp">
+                <div class="container">
+                    <div class="sec-top">
+                        <h1 class="h2">Новости</h1>
+                    </div>
+                    <div class="news__items">
+                        @@include("_item-news.html",{"title": "Встречайте новую модель направления AGRO LINE", "nmb": 2})
+                        @@include("_item-news.html",{"title": "BRAVER удостоен звания «Лучший строительный полуприцеп года»", "nmb": 1})
+                        @@include("_item-news.html",{"title": "Ключевые новинки магистрального направления", "nmb": 3})                        
+                        @@include("_item-news.html",{"title": "BRAVER удостоен звания «Лучший строительный полуприцеп года»", "nmb": 1})
+                        @@include("_item-news.html",{"title": "Ключевые новинки магистрального направления", "nmb": 3}) 
+                        @@include("_item-news.html",{"title": "Встречайте новую модель направления AGRO LINE", "nmb": 2})                  
+                        @@include("_item-news.html",{"title": "Ключевые новинки магистрального направления", "nmb": 3}) 
+                        @@include("_item-news.html",{"title": "Встречайте новую модель направления AGRO LINE", "nmb": 2})
+                        @@include("_item-news.html",{"title": "BRAVER удостоен звания «Лучший строительный полуприцеп года»", "nmb": 1}) 
+                    </div>
+                    @@include('_pagination.html')
+                </div>
+            </section>
+            @@include('_faq.html')
+            @@include('_form-block.html')
+        </main>
+        @@include('_footer.html', {"main": false})
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>

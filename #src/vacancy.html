@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {   
+    "title": "Вакансии"
+})
+
+<body>
+    <div class="wrap">
+        @@include('_header.html', {
+            "main": false, "light": true,
+            "activeclass1": "",
+            "activeclass2": "",
+            "activeclass3": "",
+            "activeclass4": "",
+            "activeclass5": "",
+            "activeclass6": "",})
+        <!--main-->  
+        <main class="main">
+            <!--breadcrumbs-->
+            <div class="breadcrumbs breadcrumbs--pos">
+                <div class="container">
+                    <ul>
+                        <li><a href="#" class="link">Главная</a></li>
+                        <li>Вакансии</li>
+                    </ul>
+                </div>
+            </div>
+             <!--intro-->
+             <section class="section-sm intro intro--vacancy">
+                <div class="container">
+                    <div class="media-cover">
+                        <picture>
+                            <source srcset="img/vacancy-bg.webp" media="(min-width: 767.98px)" type="image/webp">
+                            <source srcset="img/vacancy-bg.jpg" media="(min-width: 767.98px)">
+                            <source srcset="img/vacancy-bg-mob.webp" type="image/webp">
+                            <source srcset="img/vacancy-bg-mob.jpg"> 
+                            <img src="img/vacancy-bg.jpg" alt="Вакансии BRAVER" data-animation="scale">
+                        </picture>                          
+                    </div>
+                    <div class="intro__content">
+                        <h1>Развивайся вместе<br>с дружной командой Braver</h1>
+                        <div class="intro__bot">
+                            <div class="intro__txt">
+                                <ul>
+                                    <li>Конкурентная зарплата</li>
+                                    <li>Карьерный рост</li>
+                                    <li>Полный соцпакет</li>
+                                    <li>Дружный коллектив</li>
+                                    <li>Оплачиваемый отпуск</li>
+                                </ul>
+                            </div>
+                            <a href="#" target="_blank" class="btn main-btn">
+                                <span>Смотреть вакансии</span>
+                                <div class="main-btn__icon"><svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg></div>                                
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--vacancy-->
+            <section class="section vacancy" data-animation="fadeUp">
+                <div class="container">
+                    <div class="sec-top">
+                        <h2>Мы ищем специалистов</h2>
+                    </div>
+                    <div class="vacancy__items">
+                        @@include('_item-vacancy.html', {"schedule": "Полный день", "post": "Инженер-технолог по сварке"})
+                        @@include('_item-vacancy.html', {"schedule": "Полный день", "post": "Юрист"})
+                        @@include('_item-vacancy.html', {"schedule": "Частичная занятость", "post": "Системный администратор"})
+                        @@include('_item-vacancy.html', {"schedule": "Полный день", "post": "Электросварщик на ПА"})
+                        @@include('_item-vacancy.html', {"schedule": "Удаленная работа", "post": "Маркетолог"})
+                    </div>
+                    @@include('_pagination.html')
+                </div>
+            </section>
+        </main>
+        @@include('_footer.html', {"main": false})
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>

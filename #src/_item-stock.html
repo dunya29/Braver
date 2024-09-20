@@ -1,0 +1,42 @@
+<!--item-stock-->
+<div class="item-stock">
+    <div class="item-stock__top">
+        <a href="#" class="media-contain">
+            <img src="img/content/stock-@@nmb.png" alt="@@title">
+        </a>
+        @@if(label == true) {
+            <div class="item-stock__lbls">
+                <span>В наличии</span>
+            </div>       
+        }
+        @@if(price == false) {
+        <button class="btn stroke-btn mod-open-btn" data-modal="feedback-mod">Узнать цену</button>        
+        }
+        @@if(price == true) {
+        <div class="btn stroke-btn">Подробнее</div>        
+        }
+    </div>
+    <div class="item-stock__content">
+        <h5><a href="#">@@title</a></h5>
+        <div class="item-stock__details">
+            <div class="item-stock__det">
+                <span>Объем</span>
+                <span>46 - 60<sup>3</sup></span>
+            </div>
+            <div class="item-stock__det">
+                <span>Количество осей</span>
+                <span>3 оси</span>
+            </div>
+            <div class="item-stock__det">
+                <span>Снаряженная масса</span>
+                <span>от 5 900 кг</span>
+            </div>
+            @@if(price == true) {
+            <div class="item-stock__det">
+                <span>Стоимость</span>
+                <span class="rub">4 120 000</span>
+            </div>
+            }
+        </div>
+    </div>
+</div>

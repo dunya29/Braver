@@ -1,0 +1,203 @@
+<script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"></script>
+<script>
+    let contactsList = [
+        {
+            "id": 1,
+            "coords": [61.639413, 50.831970],
+            "title": 'ООО "КОМИТРАК"',
+            "address": '167000,Республика Коми, г. Сыктывкар, ул. Колхозная, 127',
+            "contacts": ['+7 (8212) 400-777 доб.1','+7 (8212) 400-777 доб.533','service@man-komi.ru']
+        },
+        {
+            "id": 2,
+            "coords": [61.639413, 50.8231970],
+            "title": 'ООО "КОМИТРАК 2"',
+            "address": '167000,Республика Коми, г. Сыктывкар, ул. Колхозная, 127',
+            "contacts": ['+7 (8212) 400-777 доб.1','+7 (8212) 400-777 доб.533','service@man-komi.ru']
+        },
+        {
+            "id": 3,
+            "coords": [56.326483, 44.006050],
+            "title": 'ООО "КОМИТРАК 3"',
+            "address": '167000,Республика Коми, г. Сыктывкар, ул. Колхозная, 127',
+            "contacts": ['+7 (8212) 400-777 доб.1','+7 (8212) 400-777 доб.533','service@man-komi.ru']
+        }
+    ]
+</script>
+<script>
+    let center = [55.75618711357894,37.62455054402144];  
+    let contactsMap
+    let geoObjects = [] 
+    let clusterer
+    let activePlacemark  
+    function setmapDefaults(map) {
+        map.controls.remove('geolocationControl'); // удаляем геолокацию
+        map.controls.remove('searchControl'); // удаляем поиск
+        map.controls.remove('trafficControl'); // удаляем контроль трафика
+        map.controls.remove('typeSelector'); // удаляем тип
+        map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+        map.controls.remove('rulerControl'); // удаляем контрол правил
+        map.margin.setDefaultMargin(100);
+    }
+    function closeAllMarks() {
+        if (activePlacemark && activePlacemark.isActive) {
+            activePlacemark.isActive = false;
+            if (activePlacemark.getParentElement()) {
+                let el = activePlacemark.getParentElement().getElementsByClassName('placemark')[0];  
+                el.classList.remove("active");
+            } 
+            activePlacemark.rebuild();
+            activePlacemark = null                                                               
+        }
+    }      
+    function init() {
+        contactsMap = new ymaps.Map('contactsMap', {
+          center: center,
+          zoom: 4
+        },{
+            zoomControlPosition: { right: 10, top: "50%" },
+            zoomControlSize: "large",
+        });
+        setmapDefaults(contactsMap)
+        // Создаём макет содержимого.
+        var animatedLayout = ymaps.templateLayoutFactory.createClass(
+        '<div class="placemark"></div>',
+            {
+                build: function () {
+                    animatedLayout.superclass.build.call(this);
+                    var element = this.getParentElement().getElementsByClassName('placemark')[0];
+                    // Создадим фигуру активной области
+                    var smallShape = {type: 'Circle', coordinates: [0, 0], radius: 11.5};
+                    var bigShape = {type: 'Rectangle', coordinates: [[-35, -35],[25, 25]]};
+                    this.getData().options.set('shape', this.isActive ? smallShape : bigShape);
+                    // Если метка выбрана, то зададим класс и запустим анимацию.
+                    if (this.isActive) {
+                        element.classList.add("active");
+                    } else if (this.inited) {
+                        element.classList.remove("active");
+                    }
+                    if (!this.inited) {
+                        this.inited = true;
+                        this.isActive = false;
+                        // При клике по метке будем перестраивать макет.
+                        this.getData().geoObject.events.add('click', function (e) {
+                            if(!this.isActive && activePlacemark) {
+                                activePlacemark.isActive = false;
+                                if (activePlacemark.getParentElement()) {
+                                    let el = activePlacemark.getParentElement().getElementsByClassName('placemark')[0];  
+                                    el.classList.remove("active");
+                                } 
+                            }
+                            this.isActive = !this.isActive;                                                            
+                            activePlacemark = this
+                            this.rebuild();
+                            contactsMap.events.add('click', function () {  
+                                map.balloon.close();
+                                closeAllMarks()  
+                                
+                            });
+                            contactsMap.geoObjects.events.add('balloonclose', () => closeAllMarks);  
+                        }, this);            
+                    }
+                }
+            }
+        );
+        let MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+            '<div class="cluster__count">$[properties.iconContent]</div>'
+        )
+        clusterer = new ymaps.Clusterer({
+            clusterIcons: [
+                {
+                    href: 'img/icons/map-cluster.svg',
+                    size: [86, 86],
+                    offset: [-86, -86]
+                }],
+            clusterIconContentLayout: MyIconContentLayout,
+        }) 
+        contactsList.forEach((item,i) => {
+            geoObjects[i] = new ymaps.Placemark(item.coords, 
+                {
+                    balloonContent: `
+                    <div class="balloon">
+                        <div class="balloon__header">
+                            <h4 class="balloon__name">${item.title}</h4>
+                        </div>
+                        <p class="balloon__address">${item.address}</p>
+                        <div class="balloon__contacts">
+                            ${item.contacts.length > 0 && item.contacts.map(contact => `<p>${contact}</p>`).join('')}
+                        </div>
+                    </div>`,
+                }, 
+                {
+                    iconLayout: animatedLayout,
+                    hideIconOnBalloonOpen: false,
+                    balloonOffset: [90, 70]
+                })
+            })
+        clusterer.add(geoObjects);
+        contactsMap.geoObjects.add(clusterer);
+        contactsMap.setBounds(contactsMap.geoObjects.getBounds(), {checkZoomRange: true, zoomMargin: 100}); 
+    }
+    if (document.querySelector("#contactsMap")) {
+        ymaps.ready(init);
+    }
+</script>
+<script>
+    const switchMapNavBtn = document.querySelector(".main-map__nav-map")
+    const switchMapListBtn = document.querySelector(".main-map__nav-list")
+    const mapList = document.querySelector(".main-map__maplist")
+    if (switchMapNavBtn && switchMapListBtn && mapList) {
+        switchMapNavBtn.addEventListener("click", () => {
+            init()
+        })
+        switchMapListBtn.addEventListener("click", () => {
+            contactsMap.destroy()
+        })
+        mapList.addEventListener("click", e => {
+            document.querySelectorAll(".item-map__btn").forEach(item => {
+                if (item.contains(e.target)) {
+                    closeAllMarks() 
+                    switchMapNavBtn.click()
+                    let idx = Number(item.getAttribute("data-map-id")) - 1
+                    if (geoObjects[idx]) {
+                        if (clusterer.getObjectState(geoObjects[idx]).cluster) {
+                            clusterer.getObjectState(geoObjects[idx]).cluster.events.fire('click', {
+                               coordPosition: geoObjects[idx].geometry.getCoordinates(),
+                               target: clusterer.getObjectState(geoObjects[idx]).cluster
+                            });
+                        }
+                        contactsMap.setBounds(geoObjects[idx].geometry.getBounds(), {
+                            checkZoomRange: true
+                        })
+                        setTimeout(() => {
+                            geoObjects[idx].events.fire('click', {
+                                coordPosition: geoObjects[idx].geometry.getCoordinates(),
+                                target: geoObjects[idx]
+                            });
+                        }, 500);
+                    }             
+                }
+            })
+        })
+    }    
+</script>
+<script>
+    function officeMapinit() {
+        let officeMap = new ymaps.Map('officeMap', {
+          center: [55.763903, 37.606478],
+          zoom: 13
+        });
+        setmapDefaults(officeMap)
+        officeMap.geoObjects.add(new ymaps.Placemark([55.763903, 37.606478], {}, 
+        {
+            iconLayout: 'default#image',
+            iconImageHref: 'img/icons/map-marker.svg',
+            iconImageSize: [43, 43],
+            iconImageOffset: [-21.5, -43]
+        }));
+    }
+    if (document.querySelector("#officeMap")) {
+        ymaps.ready(officeMapinit);
+    }
+</script>
+

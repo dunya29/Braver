@@ -1,0 +1,37 @@
+<!--news-->
+<section class="section news-swiper news" data-animation="fadeUp">
+    <div class="container">
+        <div class="sec-top">
+            <h2>Новости</h2>
+            <div class="swiper-btns">
+                <button class="nav-btn nav-btn--prev"><svg><use xlink:href="img/icons/sprite.svg#btn-prev"></use></svg></button>
+                <button class="nav-btn nav-btn--next"><svg><use xlink:href="img/icons/sprite.svg#btn-next"></use></svg></button>
+            </div>
+        </div>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    @@include("_item-news.html",{"title": "BRAVER удостоен звания «Лучший строительный полуприцеп года»", "nmb": 1})
+                </div>
+                <div class="swiper-slide">
+                    @@include("_item-news.html",{"title": "Встречайте новую модель направления AGRO LINE", "nmb": 2})
+                </div>
+                <div class="swiper-slide">
+                    @@include("_item-news.html",{"title": "Ключевые новинки магистрального направления", "nmb": 3})
+                </div>
+                <div class="swiper-slide">
+                    @@include("_item-news.html",{"title": "BRAVER удостоен звания «Лучший строительный полуприцеп года»", "nmb": 1})
+                </div>
+                <div class="swiper-slide">
+                    @@include("_item-news.html",{"title": "Встречайте новую модель направления AGRO LINE", "nmb": 2})
+                </div>
+            </div>
+        </div>
+        <div class="sec-bot">
+            <a href="#" class="btn main-btn main-btn--dark">
+                <span>Читать все новости</span>
+                <div class="main-btn__icon"><svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg></div>
+            </a>
+        </div>
+    </div>
+</section>

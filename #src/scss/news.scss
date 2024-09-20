@@ -1,0 +1,96 @@
+.item-news {
+    height: 100%;
+    padding-top: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    &:before,&:after {
+        content: "";
+        display: block;
+        height: 1px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &:before {
+        width: 100%;
+        background: #E5E5E5;
+    }
+    &:after {
+        width: 0;
+        background: $maincolor;
+        transition: all .3s linear;
+    }
+    &:hover {
+        &:after {
+            width: 100%;
+        }
+        .circle:before {
+            background: $maincolor;
+        }
+    }
+    .media-cover {
+        padding-top: 73.57%;
+        border-radius: 8px
+    }
+    &__content {
+        flex: 1 1 auto;
+        padding-right: 30px;
+        margin-bottom: 20px;
+        h5 {
+            font-weight: 500;
+            max-width: 420px;
+            a {
+                color: $maincolor;
+            }
+        }
+        &:before {
+            background: $light-gray;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+    &__date {
+        color: $gray;
+        display: block;
+        margin-bottom: 10px;
+    }
+    @media (max-width: $bp1) {
+        padding-top: 10px;
+        &__content {
+            margin-bottom: 10px;
+        }
+    }
+    @media (max-width: $bp2) {
+        &__date {
+            font-size: 14px;
+        }
+    }
+}
+.news {
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+    }
+    @media (max-width: $bp1) {
+        &__items {
+            gap: 20px 10px;
+        }
+    }
+    @media (max-width: $bp4) {
+        overflow: hidden;
+        &__items {
+            grid-template-columns: 1fr 1fr;
+        }
+        .swiper {
+            overflow: visible;
+        }
+    }
+    @media (max-width: $bp6) {
+        &__items {
+            grid-template-columns: 1fr;
+        }
+    }
+}

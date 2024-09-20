@@ -1,0 +1,21 @@
+<!--accord-block-->
+<section class="section accord-block" data-animation="fadeUp">
+    <div class="container">
+        <div class="sec-top">
+            <h2>Наши преимущества</h2>
+        </div>
+        <div class="accord-block__items">
+            @@include("_item-acc.html", {"nmb": 1, "title": "Долговечные и рентабельные"})
+            @@include("_item-acc.html", {"nmb": 2, "title": "Проходят весовой контроль"})
+            @@include("_item-acc.html", {"nmb": 3, "title": "Соответствуют ДОПОГ"})
+            @@include("_item-acc.html", {"nmb": 4, "title": "Незаменимы в условиях холода и бездорожья"})
+            @@include("_item-acc.html", {"nmb": 5, "title": "Эргономичны и удобны в экспуатации"})
+            @@include("_item-acc.html", {"nmb": 6, "title": "Красивое и стойкое лакокрасочное покрытие"})
+        </div>
+        @@if(bot == true) {
+        <div class="sec-bot">
+            <a href="#" class="btn main-btn main-btn--dark"><span>Подробнее о заводе</span></a>
+        </div>
+        }
+    </div>
+</section>

@@ -1,0 +1,190 @@
+.item-review {
+    padding: 20px;
+    display: flex;
+    border-radius: 8px;
+    background: $light-gray;
+    margin-bottom: 10px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    .read-more {
+        flex: 1 1 auto;
+        display: grid;
+        grid-template-columns: 8fr 2fr;
+        gap: 20px;
+        align-items: start;
+        &.more-hidden {
+            .read-more__content {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 4;
+                text-overflow: ellipsis;
+            }
+        }
+        &__btn {
+            justify-self: end;
+        }
+    }
+    .page-content {
+        max-width: 900px;
+    }
+    &__preview {
+        flex: 0 0 calc(100% / 12 * 2 - 10px);
+        .media-contain {
+            width: 81px;
+            height: 123px;
+            border-radius: 8px;
+            background: rgba($maincolor, .1);
+            &:hover {
+                &:after {
+                    opacity: 1;
+                }
+                .link-icon {
+                    opacity: 1;
+                }
+            }
+            &:after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: rgba($maincolor, .1);
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                transition: all .3s linear;
+            }
+            img {
+                border-radius: 6px;
+                max-width: calc(100% - 4px);
+                max-height: calc(100% - 4px);
+            }
+            .link-icon {
+                width: 34px;
+                height: 34px;
+                padding: 12px;
+                background: $white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                opacity: 0;
+                pointer-events: none;
+                z-index: 1;
+            }
+        }
+    }
+    &__title {
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    @media (max-width: $bp1) {
+        .read-more {
+            gap: 10px;
+        }
+        .page-content {
+            max-width: 770px;
+        }
+    }
+    @media (max-width: $bp2) {
+        .page-content {
+            p {
+                font-size: 14px;
+            }
+        }
+        .text-btn:hover {
+            color: $maincolor;
+        }
+        &__preview {
+            .media-contain {
+                width: 61px;           
+                height: 92px;
+            }
+        }
+    }
+    @media (max-width: $bp4) {
+        padding: 12px;
+        .read-more {
+            display: block;
+            &.more-hidden .read-more__content {
+                -webkit-line-clamp: 10;
+            }
+            &__btn {
+                margin-top: 10px;
+            }
+        }
+        &__preview {
+            flex: 0 0 71px;
+        }
+    }
+}
+.reviews {
+    @media (max-width: $bp4) {
+        .sec-top {
+            padding-bottom: 0;
+            position: relative;
+            padding-bottom: 66px;
+        }
+    }
+}
+.main-reviews {
+    .item-review {
+        margin-bottom: 0;
+        .read-more {
+            display: block;
+            &.more-hidden .read-more__content {
+                -webkit-line-clamp: 10;
+            }
+        }
+        .read-more__btn {
+            margin-top: 10px;
+        }
+        &__preview {
+            flex: 0 0 81px;
+            margin-right: 20px;
+        }
+        &__title {
+            margin-bottom: 20px;
+        }
+    }
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+    }
+    @media (max-width: $bp1) {
+        .item-review {
+            padding: 12px;
+            .read-more.more-hidden .read-more__content {
+                -webkit-line-clamp: 9;
+            }
+            .read-more__btn {
+                font-weight: 400;
+            }
+            &__preview {
+                margin-right: 10px;
+            }
+            &__title {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+        }
+        &__items {
+            gap: 10px;
+        }
+    }
+    @media (max-width: $bp2) {
+        .item-review {
+            &__preview {
+                flex: 0 0 61px;
+            }
+        }
+    }
+    @media (max-width: $bp3) {
+        &__items {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+

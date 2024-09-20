@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {   
+    "title": "Контакты"
+})
+
+<body>
+    <div class="wrap">
+        @@include('_header.html', {
+            "main": false, "light": true,
+            "activeclass1": "",
+            "activeclass2": "",
+            "activeclass3": "",
+            "activeclass4": "",
+            "activeclass5": "",
+            "activeclass6": "active",
+        })
+        <!--main-->  
+        <main class="main">
+            <!--breadcrumbs-->
+            <div class="breadcrumbs breadcrumbs--pos fixed-block">
+                <div class="container">
+                    <ul>
+                        <li><a href="#" class="link">Главная</a></li>
+                        <li>Контакты</li>
+                    </ul>
+                </div>
+            </div>
+             <!--intro-->
+             <section class="section-sm intro">
+                <div class="container">
+                    <div class="media-cover">
+                        <picture>
+                            <source srcset="img/contacts-bg.webp" media="(min-width: 767.98px)" type="image/webp">
+                            <source srcset="img/contacts-bg.jpg" media="(min-width: 767.98px)">
+                            <source srcset="img/contacts-bg-mob.webp" type="image/webp">
+                            <source srcset="img/contacts-bg-mob.jpg"> 
+                            <img src="img/contacts-bg.jpg" alt="Контакты BRAVER" data-animation="scale">
+                        </picture>
+                    </div>
+                    <div class="intro__content">
+                        <h1>Контакты</h1>
+                    </div>
+                </div>
+            </section>
+            <!--contacts-->
+            <section class="section contacts" data-animation="fadeUp">
+                <div class="container">
+                    <div class="contacts__row">
+                        <div class="contacts__l">
+                            <div class="circle contacts__top"><h4>Главный офис</h4></div>
+                            <div class="map" id="officeMap"></div>
+                            <div class="contacts__list">
+                                <div class="item-contact">
+                                    <span class="item-contact__lbl">Адрес:</span>
+                                    <span>г. Москва, ул. Тверская 44/1, каб. 6</span>
+                                </div>
+                                <div class="item-contact">
+                                    <span class="item-contact__lbl">Телефон:</span>
+                                    <a href="tel:89007777777">8 (900) 777-77-77</a>
+                                </div>
+                                <div class="item-contact">
+                                    <span class="item-contact__lbl">Электронная почта:</span>
+                                    <a href="mailto:email@gmail.com">email@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contacts__r">
+                            <div class="circle contacts__top"><h4>Руководители</h4></div>
+                            <div class="contacts__head">
+                                @@include('_item-head.html', {"grid": false, "nmb": 2, "name": "Иванов Иван", "post": "Коммерческий директор Braver"})
+                                @@include('_item-head.html', {"grid": false, "nmb": 3, "name": "Иванов Иван", "post": "Генеральный директор Braver"})
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--departments-->
+            <section class="section departments" data-animation="fadeUp">
+                <div class="container">
+                    <div class="sec-top">
+                        <h2>Контакты отделов</h2>
+                    </div>
+                    <div class="switch-block">
+                        <div class="departments__nav">
+                            <div data-nav="" class="departments__nav-item active">
+                                <h5>Отдел продаж</h5>
+                                <div class="link-icon"><svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg></div>
+                            </div>
+                            <div data-nav="" class="departments__nav-item">
+                                <h5>Технологический отдел</h5>
+                                <div class="link-icon"><svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg></div>
+                            </div>
+                            <div data-nav="" class="departments__nav-item">
+                                <h5>Конструкторский отдел</h5>
+                                <div class="link-icon"><svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg></div>
+                            </div>
+                            <div data-nav="" class="departments__nav-item">
+                                <h5>Отдел снабжения</h5>
+                                <div class="link-icon"><svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg></div>
+                            </div>
+                            <div data-nav="" class="departments__nav-item">
+                                <h5>Отдел маркетинга и рекламы</h5>
+                                <div class="link-icon"><svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg></div>
+                            </div>
+                            <div data-nav="" class="departments__nav-item">
+                                <h5>Отдел технического контроля</h5>
+                                <div class="link-icon"><svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg></div>
+                            </div>
+                        </div>
+                        <div class="departments__blocks">
+                            @@include('_dep-block.html', {"department": "Отдел продаж", "active": true})
+                            @@include('_dep-block.html', {"department": "Технологический отдел", "active": false})
+                            @@include('_dep-block.html', {"department": "Конструкторский отдел", "active": false})
+                            @@include('_dep-block.html', {"department": "Отдел снабжения", "active": false})
+                            @@include('_dep-block.html', {"department": "Отдел маркетинга и рекламы", "active": false})
+                            @@include('_dep-block.html', {"department": "Отдел технического контроля", "active": false})
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--map-->
+            <section class="section main-map" data-animation="fadeUp">
+                <div class="container">
+                    <div class="sec-top">
+                        <h2>Дилеры</h2>
+                    </div>
+                </div>                
+                <div class="map" id="contactsMap"></div>
+            </section>
+            @@include('_faq.html')
+            @@include('_form-block.html')
+        </main>
+        @@include('_footer.html', {"main": false})
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+    @@include('_map.html')
+</body>
+
+</html>

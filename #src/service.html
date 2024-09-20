@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {   
+    "title": "Сервисные центры"
+})
+
+<body>
+    <div class="wrap">
+        @@include('_header.html', {
+            "main": false, "light": false,
+            "activeclass1": "",
+            "activeclass2": "",
+            "activeclass3": "",
+            "activeclass4": "",
+            "activeclass5": "",
+            "activeclass6": "",
+        })
+        <!--main-->  
+        <main class="main">
+            @@include('_breadcrumbs.html', {
+                "page": "Сервисные центры", 
+            })
+            <!--main-map-->
+            <section class="section main-map">
+                <div class="container">
+                    <div class="sec-top">
+                        <h1 class="h2">Сервисные центры</h1>
+                    </div>
+                </div>
+                <div class="switch-block">
+                    <div class="container">
+                        <div class="main-map__top">
+                            @@include('_city-search.html')
+                            <div class="main-map__nav">
+                                <span data-nav="" class="circle main-map__nav-map active">Карта</span>
+                                <span data-nav="" class="circle main-map__nav-list">Список</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-map__blocks">
+                        <div data-block="" class="map active" id="contactsMap"></div>
+                        <div data-block="" class="main-map__maplist">
+                            <div class="container">
+                                <div class="main-map__items">
+                                    @@include('_item-map.html', {"id": 1})
+                                    @@include('_item-map.html', {"id": 2})
+                                    @@include('_item-map.html', {"id": 3})
+                                </div>
+                                @@include('_pagination.html')
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            @@include('_form-block.html')
+        </main>
+        @@include('_footer.html', {"main": false})
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+    @@include('_map.html')
+</body>
+
+</html>

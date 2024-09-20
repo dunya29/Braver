@@ -1,0 +1,22 @@
+<!--item-head-->
+@@if(grid == true) {
+    <div class="item-head item-head--grid"> 
+}
+@@if(grid == false) {
+<div class="item-head">   
+}
+    <div class="media-contain circle">
+        <img src="img/head-@@nmb.png" alt="@@name">
+    </div>
+    <h6>@@name</h6>
+    @@if(grid == true) {
+    <p><span>Должность</span><span>@@post</span></p>
+    <p><span>Телефон</span><a href="tel:89007777777">8 (900) 777-77-77</a></p>
+    <p><span>Email</span><a href="mailto:email@gmail.com">email@gmail.com</a></p>
+    }
+    @@if(grid == false) {
+    <p><span>@@post</span></p>
+    <p><a href="tel:89007777777">8 (900) 777-77-77</a></p>
+    <p><a href="mailto:email@gmail.com">email@gmail.com</a></p>
+    }
+</div>

@@ -1,0 +1,26 @@
+@@if(active == true) {
+<div data-block="" class="accordion departments__block active">
+}
+@@if(active == false) {
+<div data-block="" class="accordion departments__block">
+}
+    <div class="accordion__header">
+        <h5>@@department</h5>
+        <div class="link-icon"><svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg></div>
+    </div>
+    <div class="accordion__body">
+        <div class="departments__block-inner">
+            <div class="media-cover">
+                <img src="img/contacts-1.jpg" alt="Технологический отдел">
+            </div>
+            <div class="departments__content">
+                <div class="departments__txt">
+                    <h3>@@department</h3>
+                    <p>Чтобы обеспечить бесперебойный выпуск и высокое качество техники, наша команда постоянно совершенствует технологии производства. Каждый день для нас — возможность улучшить и оптимизировать внутренние процессы компании.</p>
+                </div>
+                <div class="departments__contact"><a href="tel:89007777777">8 (900) 777-77-77</a></div>
+                <div class="departments__contact"><a href="mailto:email@gmail.com">email@gmail.com</a></div>
+            </div>
+        </div>
+    </div>
+</div>

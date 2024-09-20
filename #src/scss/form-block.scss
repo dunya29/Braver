@@ -1,0 +1,107 @@
+.form-block {
+	&__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+	&__l {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        .media-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            &:after {
+                content: "";
+                display: block;
+                background: rgba($maincolor, .5);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    &__content {
+        padding: 30px;
+        h2 {
+            color: $white;
+            margin-bottom: 20px;
+        }
+        p {
+            line-height: 1;
+            color: rgba($white, .8);
+            max-width: 520px;
+        }
+        &:before {
+            margin-bottom: 30px;
+        }
+    }
+	&__r {
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        background: $light-gray;
+        .form {
+            width: 100%;
+            max-width: 582px
+        }
+    }
+    @media (max-width: $bp1) {
+        &__content {
+            padding: 20px;
+            h2 {
+                margin-bottom: 16px;
+            }
+            &:before {
+                margin-bottom: 20px;
+            }
+        }
+        &__r {
+            padding: 24px 50px;
+        }
+    }
+    @media (max-width: $bp2) {
+        &__content {
+            padding: 12px;
+            h2 {
+                max-width: 350px;
+            }
+        }
+        &__r {
+            padding: 12px 40px;
+        }
+    }
+    @media (max-width: $bp4) {
+        &__inner {
+            grid-template-columns: 1fr;
+            .circle::before {
+                content: none;
+            }
+        }
+        &__content {
+            min-height: 188px;
+            padding: 20px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            h2 {
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 14px;
+                max-width: 314px;
+            }
+        }
+        &__r {
+            padding: 12px;
+        }
+    }
+}

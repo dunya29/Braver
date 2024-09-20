@@ -1,0 +1,125 @@
+.certs {
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        gap: 20px;
+    }
+    @media (max-width: $bp1) {
+        &__items {
+            gap: 10px;
+        }
+    }
+    @media (max-width: $bp4) {
+        &__items {
+            grid-template-columns: repeat(3,1fr);
+        }
+    }
+    @media (max-width: $bp6) {
+        &__items {
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+}
+.item-cert {
+    &:hover {
+        h6 {
+            color: $maincolor;
+        }
+        .media-contain:after {
+            opacity: 1;
+        }
+        .link-icon {
+            opacity: 1;
+        }
+    }
+    h6 {
+        color: $gray;
+        transition: all .3s linear;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis
+    }
+    .media-contain {
+        padding-top: 151.85%;
+        border-radius: 8px;
+        background: $light-gray;
+        margin-bottom: 10px;
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: rgba($maincolor, .1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: all .3s linear;
+        }
+        img {
+            border-radius: 6px;
+            max-width: calc(100% - 8px);
+            max-height: calc(100% - 8px);
+        }
+    }
+    .link-icon {
+        background: $white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        opacity: 0;
+        pointer-events: none;
+        z-index: 1;
+    }
+    @media (max-width: $bp1) {
+        h6 {
+            font-size: 14px;
+        }
+    }
+}
+.item-doc {
+    color: $gray;
+    padding: 30px 0;
+    border-bottom: 1px solid #e5e5e5;
+    display: grid;
+    grid-template-columns: 2fr 8fr 2fr;
+    align-items: center;
+    &:first-child {
+        border-top: 1px solid #e5e5e5;
+    }
+    &:hover {
+        h3 {
+            color: $maincolor;
+        }
+        .link-icon {
+            background: $maincolor;
+            svg {
+                stroke: $white;
+            }
+        }
+    }
+    h3 {
+        transition: all .3s linear;
+    }
+    .link-icon {
+        justify-self: end;
+    }
+    @media (max-width: $bp1) {
+        padding: 20px 0;
+    }
+    @media (max-width: $bp5) {
+        grid-template-columns: 1fr auto;
+        align-items: start;
+        gap: 10px;
+        & > span {
+            grid-column: 1/3;
+        }
+        h3 {
+            max-width: 311px;
+        }
+    }
+}
+

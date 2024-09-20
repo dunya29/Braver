@@ -1,0 +1,79 @@
+.breadcrumbs {
+    margin-bottom: 12px;
+    &.breadcrumbs--pos {
+        position: absolute;
+        top: 124px;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        li {
+            color: $white;
+            opacity: 1;
+            &:before {
+                background-image: url(../img/icons/chevron-r-white.svg);
+            }
+            a {
+                color: $white;
+                &:after {
+                    background: $white
+                }
+            }
+        }
+    }
+    &--pr ul {
+        width: calc(100% / 3 * 2 - 20px);
+    }
+    ul {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        li {
+            padding-left: 26px;
+            margin-bottom: 8px;
+            display: inline;
+            opacity: 0.4;
+            white-space: nowrap;
+            position: relative;
+            &:before {
+                content: "";
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: url(../img/icons/chevron-r.svg) center / contain no-repeat;
+                position: absolute;
+                top: 50%;
+                left: 8px;
+                transform: translateY(-50%);
+            }
+            &:first-child {
+                padding-left: 0;
+                &:before {
+                    display: none;
+                }
+            }
+            &:last-child {
+                opacity: 1;   
+                overflow: hidden;
+                text-overflow: ellipsis;             
+            }
+            a {          
+                color: $maincolor;
+            }
+        }
+    }
+    @media (max-width: $bp1) {
+        &.breadcrumbs--pos {
+            top: 90px;
+        }
+    }
+    @media (max-width: $bp2) {
+        &.breadcrumbs--pos {
+            top: 80px;
+        }
+    }
+    @media (max-width: $bp3) {
+        &--pr ul {
+            width: 100%;
+        }
+    }
+}

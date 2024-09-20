@@ -1,0 +1,106 @@
+<!--footer-->
+@@if (main == true) {
+<footer class="footer footer--main">    
+}
+@@if (main == false) {
+ <footer class="footer">  
+} 
+    <div class="container">
+        <div class="footer__top">
+            <div class="logo">
+                <a href="#">
+                    <img src="img/logo.svg" alt="Логотип">
+                </a>
+                <span>Производство полуприцепов</span>
+            </div>
+            <div class="footer__cols">
+                <div class="footer__col">
+                    <div class="footer__contacts">
+                        <div class="footer__contact">
+                            <span>Контакты:</span>
+                            <a href="tel:89007777777">8 (900) 777-77-77</a>
+                            <a href="mailto:info@braver.ru">info@braver.ru</a>
+                        </div>
+                        <div class="footer__contact">
+                            <span>График работы:</span>
+                            <span>пн-пт с 9 до 18</span>
+                        </div>
+                        <div class="footer__contact">
+                            <span>Адрес:</span>
+                            <span>г. Москва,<br> ул. Тверская 44/1, каб. 6</span>
+                        </div>
+                    </div>
+                    <nav class="footer__nav">
+                        <a href="#">Каталог</a>
+                        <a href="#">Сортиментовозы</a>
+                        <a href="#">Контейнеровозы</a>
+                        <a href="#">Зерновозы</a>
+                        <a href="#">Бортовые</a>
+                        <a href="#">Шторно-бортовые</a>
+                    </nav>
+                </div>
+                <div class="footer__col">
+                    <nav class="footer__nav">
+                        <a href="#">О заводе</a>
+                        <a href="#">Новости</a>
+                        <a href="#">Контакты</a>
+                        <a href="#">Техника в наличии</a>
+                        <a href="#">Доставка</a>
+                        <a href="#">Сервисные центры</a>
+                        <a href="#">Гарантийное обслуживание</a>
+                    </nav>
+                    <nav class="footer__nav">
+                        <a href="#">Документы и сертификаты</a>
+                        <a href="#">Дилеры</a>
+                        <a href="#">Отзывы</a>
+                        <a href="#">Вакансии</a>
+                        <a href="#">Лизинг</a>
+                        <a href="#">Trade-In</a>
+                    </nav>
+                </div>
+            </div>
+            <button type="button" class="btn stroke-btn mod-open-btn" data-modal="callback-mod">Заказать звонок</button>
+            @@include("_search.html")
+            <a href="#" class="comp-rate" target="_blank">
+                <div class="comp-rate__top">
+                    <div class="comp-rate__total">
+                        <img src="img/icons/yandex-rate.svg" alt="">
+                        <span class="h3">4,4</span>
+                    </div>
+                    <div class="rating">
+                        <span class="rating__container light">
+                            <svg><use xlink:href="img/icons/sprite.svg#star-5"></use></svg>
+                        </span>
+                        <span class="rating__container dark" style="width: 80%;">
+                            <svg><use xlink:href="img/icons/sprite.svg#star-5"></use></svg>
+                        </span>
+                    </div>
+                </div>
+                <span class="comp-rate__txt">Рейтинг организации в Яндексе</span>
+            </a>
+            <div class="social">
+                <a href="#"><svg><use xlink:href="img/icons/sprite.svg#vk"></use></svg></a>
+                <a href="#"><svg><use xlink:href="img/icons/sprite.svg#whatsapp"></use></svg></a>
+                <a href="#"><svg><use xlink:href="img/icons/sprite.svg#telegram"></use></svg></a>
+            </div>
+            <div class="lang">
+                <a href="#" class="active">RU</a>
+                <a href="#">EN</a>
+            </div> 
+        </div>
+        <div class="footer__bg">          
+            <span>Работаем по России и СНГ</span>
+            <img src="img/footer-info.svg" alt="">
+        </div>
+        <div class="footer__bot">
+            <div class="footer__dev">
+                <span>Сделано в </span>
+                <a href="https://omniagency.ru/" target="_blank" rel="nofollow">OMNI</a>
+            </div>          
+            <span class="footer__copy">© 2024 BRAVER</span>
+            <div class="footer__policy">
+                <a href="#" target="_blank">Политика конфиденциальности</a>
+            </div>           
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {   
+    "title": "Главная"
+})
+
+<body class="no-scroll">
+    <div class="wrap">
+        @@include('_header.html', {
+            "main": true, "light": true,
+            "activeclass1": "",
+            "activeclass2": "",
+            "activeclass3": "",
+            "activeclass4": "",
+            "activeclass5": "",
+            "activeclass6": ""
+        })
+        <!--main-->  
+        <main class="main">
+            @@include('_preloader.html")
+            <!--intro-->
+            <section class="mb-40 intro intro--main">
+                <div class="container">
+                    <div class="media-cover">
+                        <picture>
+                            <source srcset="img/intro.webp" media="(min-width: 767.98px)" type="image/webp">
+                            <source srcset="img/intro.jpg" media="(min-width: 767.98px)">
+                            <source srcset="img/intro-mob.webp" type="image/webp">
+                            <source srcset="img/intro-mob.jpg"> 
+                            <img src="img/intro.jpg" alt="" data-animation="scale">
+                        </picture>
+                    </div>
+                    <div class="intro__content">
+                        <h1>Разработана новая модель сортиментовоза</h1>
+                        <div class="intro__bot">
+                            <div class="intro__txt">
+                                <p>Производим полуприцепы и спецтехнику различного назначения: сортиментовозы, контейнеровозы, зерновозы, бортовые, шторно-бортовые</p>
+                            </div>
+                            <button class="btn main-btn mod-open-btn" data-modal="feedback-mod">
+                                <span>Оставить заявку</span>
+                                <div class="main-btn__icon"><svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg></div>                                
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--main-models-->
+            <section class="section main-models" data-animation="fadeUp">
+                <div class="container">
+                    <div class="switch-block main-models__inner">
+                        <div class="main-models__content">
+                            <div class="sec-top"> 
+                                <h2>Новые актуальные модели полуприцепов</h2>
+                            </div>                          
+                            <div class="tabs">
+                                <span class="active" data-nav="">Зерновозы</span>
+                                <span data-nav="">Бортовые</span>
+                                <span data-nav="">Контейнеровозы</span>
+                                <span data-nav="">Сортиментовозы</span>
+                                <span data-nav="">Шторно-бортовые</span>
+                            </div>
+                        </div>
+                        <div class="main-models__preview">
+                            <a href="#" class="circle media-contain active" data-block="">
+                                <img src="img/models-1.png" alt="Зерновозы">
+                            </a>
+                            <a href="#" class="circle media-contain" data-block="">
+                                <img src="img/models-2.png" alt="Бортовые">
+                            </a>
+                            <a href="#" class="circle media-contain" data-block="">
+                                <img src="img/models-1.png" alt="Контейнеровозы">
+                            </a>
+                            <a href="#" class="circle media-contain" data-block="">
+                                <img src="img/models-2.png" alt="Сортиментовозы">
+                            </a>
+                            <a href="#" class="circle media-contain" data-block="">
+                                <img src="img/models-2.png" alt="Шторно-бортовые">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--sub-cat-->
+            <section class="section has-btn sub-cat" data-animation="fadeUp">
+                <div class="container">
+                    <div class="sec-top">
+                        <h2>Техника в наличии</h2>
+                        <a href="#" class="btn main-btn main-btn--dark">
+                            <span>Смотреть все</span>
+                            <div class="main-btn__icon"><svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg></div>                                
+                        </a>
+                    </div>
+                    <div class="cat-wrapper">
+                        @@include('_item-stock.html', {"nmb": 1, "title": "Зерновозы бортовые 46-60 м3 с вынесенной осью", "price": false, "label": false})
+                        @@include('_item-stock.html', {"nmb": 2, "title": "Бортовой полуприцеп 13,62 м", "price": true, "label": true})
+                        @@include('_item-stock.html', {"nmb": 3, "title": "Облегченные зерновозы бортовые 46-60 м3", "price": true, "label": false})
+                    </div>
+                </div>
+            </section>
+            <!--main-cat-->
+            <section class="section has-btn main-cat" data-animation="fadeUp">
+                <div class="container">
+                    <div class="sec-top">
+                        <h2>каталог техники</h2>
+                        <a href="#" class="btn main-btn main-btn--dark">
+                            <span>Перейти в каталог</span>
+                            <div class="main-btn__icon"><svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg></div>                                
+                        </a>
+                    </div>
+                    <div class="main-cat__items">
+                        @@include('_item-cat.html', {"nmb": 1, "title": "Сортиментовозы"})
+                        @@include('_item-cat.html', {"nmb": 2, "title": "Контейнеровозы"})
+                        @@include('_item-cat.html', {"nmb": 3, "title": "Зерновозы"})
+                        @@include('_item-cat.html', {"nmb": 4, "title": "Бортовые"})
+                        @@include('_item-cat.html', {"nmb": 5, "title": "Шторно-бортовые"})
+                    </div>
+                </div>
+            </section>
+            @@include('_accord-block.html', {"bot": true})
+            @@include('_news.html')
+            @@include('_form-block.html')
+        </main>
+        @@include('_footer.html', {"main": true})
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>

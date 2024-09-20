@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {   
+    "title": "Гарантийное обслуживание"
+})
+
+<body>
+    <div class="wrap">
+        @@include('_header.html', {
+            "main": false, "light": true,
+            "activeclass1": "",
+            "activeclass2": "",
+            "activeclass3": "",
+            "activeclass4": "",
+            "activeclass5": "",
+            "activeclass6": "",
+        })
+        <!--main-->  
+        <main class="main">
+            <!--breadcrumbs-->
+            <div class="breadcrumbs breadcrumbs--pos fixed-block">
+                <div class="container">
+                    <ul>
+                        <li><a href="#" class="link">Главная</a></li>
+                        <li>Гарантийное обслуживание</li>
+                    </ul>
+                </div>
+            </div>
+            <!--intro-->
+            <div class="mb-30 intro">
+                <div class="container">
+                    <div class="media-cover">
+                        <picture>
+                            <source srcset="img/garanty-bg.webp" media="(min-width: 767.98px)" type="image/webp">
+                            <source srcset="img/garanty-bg.jpg" media="(min-width: 767.98px)">
+                            <source srcset="img/garanty-bg-mob.webp" type="image/webp">
+                            <source srcset="img/garanty-bg-mob.jpg"> 
+                            <img src="img/garanty-bg.jpg" alt="Гарантийное обслуживание" data-animation="scale">
+                        </picture>
+                    </div>
+                    <div class="intro__content">
+                        <h1>Гарантийное обслуживание</h1>
+                    </div>
+                </div>
+            </div>
+            <!--garanty-->
+            <section class="section garanty" data-animation="fadeUp">
+                <div class="container">
+                    <div class="garanty__row">
+                        <div class="garanty__content">
+                            <div class="page-content">
+                                <p>Мы заботимся о том, чтобы использование нашей техники было для вас максимально комфортным. При возникновении любых вопросов мы всегда готовы оказать вам квалифицированную поддержку.</p>
+                                <p>Соблюдайте инструкции по эксплуатации, вовремя проходите техническое обслуживание — это поможет сохранить качество вашей техники на долгие годы.</p>
+                            </div>
+                            <a href="#" class="btn main-btn main-btn--dark" target="_blank"><span>PDF Гарантийная политика Braver</span></a>
+                        </div>
+                        <div class="garanty__preview">
+                            <div class="circle media-contain" >
+                                <img src="img/models-2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--main-head-->
+            <section class="section main-head" data-animation="fadeUp">
+                <div class="container">
+                    <div class="sec-top">
+                        <h2>Если у вас возникли вопросы</h2>
+                    </div>
+                    <div class="main-head__items">
+                        @@include('_item-head.html', {"grid": true, "nmb": 1, "name": "Иванов Иван", "post": "Инженер по гарантии (магистральные полуприцепы)"})
+                        @@include('_item-head.html', {"grid": true, "nmb": 2, "name": "Иванов Иван", "post": "Инженер по гарантии (магистральные полуприцепы)"})
+                        @@include('_item-head.html', {"grid": true, "nmb": 3, "name": "Иванов Иван", "post": "Инженер по гарантии (магистральные полуприцепы)"})
+                    </div>
+                </div>                
+            </section>
+            <!--handling-->
+            <section class="section handling" data-animation="fadeUp">
+                <div class="container">
+                    <div class="sec-top">
+                        <h2>Структура обращения</h2>
+                    </div>
+                    <div class="handling__items">
+                        @@include("_item-info.html", {"nmb": "01", "title": "Оформление запроса", "txt": "Вы можете связаться с нами любым удобным для вас способом. Обязательно подготовьте заранее файлы отчета ODR."})
+                        @@include("_item-info.html", {"nmb": "02", "title": "Формируем заявку", "txt": "Наш специалист связывается с вами для уточнения деталей и проведения дальнейшей экспертизы."})
+                        @@include("_item-info.html", {"nmb": "03", "title": "Берем в работу", "txt": "Технические специалисты выявляют неисправности, определяют срок замены с учетом объективного времени доставки деталей заводом."})
+                        @@include("_item-info.html", {"nmb": "04", "title": "Передаем специалистам", "txt": "Передаем транспортное средство с проведенной диагностикой специалистам по конкретной неисправности."})
+                        @@include("_item-info.html", {"nmb": "05", "title": "Устраняем проблему", "txt": "Устраняем неисправности в срок, необходимый в соответствии с технологией ремонта."})
+                        @@include("_item-info.html", {"nmb": "06", "title": "Готовый результат", "txt": "Передаем заказчику готовое к эксплуатации транспортное средство."})
+                    </div>
+                </div>
+            </section>
+            <!--map-->
+            <section class="section main-map" data-animation="fadeUp">
+                <div class="container">
+                    <div class="sec-top">
+                        <h2>Сервисные центры</h2>
+                    </div>
+                </div>                
+                <div class="map" id="contactsMap"></div>
+            </section>
+            @@include('_faq.html')
+            @@include('_form-block.html')
+        </main>
+        @@include('_footer.html', {"main": false})
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+    @@include('_map.html')
+</body>
+
+</html>

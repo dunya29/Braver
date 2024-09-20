@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {   
+    "title": "Техника в наличии"
+})
+
+<body>
+    <div class="wrap">
+        @@include('_header.html', {
+            "main": false, "light": false,
+            "activeclass1": "",
+            "activeclass2": "",
+            "activeclass3": "active",
+            "activeclass4": "",
+            "activeclass5": "",
+            "activeclass6": "",
+        })
+        <!--main-->  
+        <main class="main">
+            @@include('_breadcrumbs.html', {
+                "page": "Каталог",            
+            })
+            <!--sub-cat-->
+            <section class="section stock-cat" data-animation="fadeUp">
+                <div class="container">
+                    <div class="sec-top">
+                        <h1 class="h2">Техника в наличии</h1>
+                        <!--stock-filter-->
+                        <div class="dropdown stock-filter" aria-expanded="false">
+                            <div class="dropdown__header">
+                                <span>Фильтры</span>
+                                <svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg>
+                            </div>
+                            <div class="dropdown__body">
+                                <div class="custom-scroll">
+                                    <form action="" class="stock-filter__form" onsubmit="event.preventDefault();closeDropdown(this.closest('.dropdown'))">
+                                        <!--filedset-->
+                                        <div class="stock-filter__sec">
+                                            <div class="circle stock-filter__sec-header"><span>Бортовые</span></div>
+                                            <div class="stock-filter__sec-body">
+                                                <div class="stock-filter__items">
+                                                    <label class="text-radio">
+                                                        <input type="radio" name="stock-filter-1" value="1" data-name="Бортовые" >
+                                                        <span>3х осные</span>
+                                                    </label>
+                                                    <label class="text-radio">
+                                                        <input type="radio" name="stock-filter-1" value="2" data-name="Бортовые" >
+                                                        <span>4х осные</span>
+                                                    </label>
+                                                    <label class="text-radio">
+                                                        <input type="radio" name="stock-filter-1" value="all" data-name="Бортовые" >
+                                                        <span>Все</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <!--filedset-->
+                                        <div class="stock-filter__sec">
+                                            <div class="circle stock-filter__sec-header"><span>Контейнеровозы</span></div>
+                                            <div class="stock-filter__sec-body">
+                                                <div class="stock-filter__items">
+                                                    <label class="text-radio">
+                                                        <input type="radio" name="stock-filter-2" value="1" data-name="Контейнеровозы" >
+                                                        <span>3х осные</span>
+                                                    </label>
+                                                    <label class="text-radio">
+                                                        <input type="radio" name="stock-filter-2" value="2" data-name="Контейнеровозы" >
+                                                        <span>4х осные</span>
+                                                    </label>
+                                                    <label class="text-radio">
+                                                        <input type="radio" name="stock-filter-2" value="all" data-name="Контейнеровозы" >
+                                                        <span>Все</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>   
+                                        <!--filedset-->
+                                        <div class="stock-filter__sec">
+                                            <div class="circle stock-filter__sec-header"><span>Зерновозы</span></div>
+                                            <div class="stock-filter__sec-body">
+                                                <div class="stock-filter__items">
+                                                    <label class="text-radio">
+                                                        <input type="radio" name="stock-filter-3" value="1" data-name="Зерновозы" >
+                                                        <span>3х осные</span>
+                                                    </label>
+                                                    <label class="text-radio">
+                                                        <input type="radio" name="stock-filter-3" value="2" data-name="Зерновозы" >
+                                                        <span>4х осные</span>
+                                                    </label>
+                                                    <label class="text-radio">
+                                                        <input type="radio" name="stock-filter-3" value="all" data-name="Зерновозы" >
+                                                        <span>Все</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <!--filedset-->
+                                        <div class="stock-filter__sec">
+                                            <div class="circle stock-filter__sec-header"><span>Сортиментовозы</span></div>
+                                            <div class="stock-filter__sec-body">
+                                                <div class="stock-filter__items">
+                                                    <label class="text-radio">
+                                                        <input type="radio" name="stock-filter-4" value="1" data-name="Сортиментовозы" >
+                                                        <span>3х осные</span>
+                                                    </label>
+                                                    <label class="text-radio">
+                                                        <input type="radio" name="stock-filter-4" value="2" data-name="Сортиментовозы" >
+                                                        <span>4х осные</span>
+                                                    </label>
+                                                    <label class="text-radio">
+                                                        <input type="radio" name="stock-filter-4" value="all" data-name="Сортиментовозы" >
+                                                        <span>Все</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <!--filedset-->
+                                        <div class="stock-filter__sec">
+                                            <div class="circle stock-filter__sec-header"><span>Шторно-бортовые</span></div>
+                                            <div class="stock-filter__sec-body">
+                                                <div class="stock-filter__items">
+                                                    <label class="text-radio">
+                                                        <input type="radio" name="stock-filter-5" value="1" data-name="Шторно-бортовые" >
+                                                        <span>3х осные</span>
+                                                    </label>
+                                                    <label class="text-radio">
+                                                        <input type="radio" name="stock-filter-5" value="2" data-name="Шторно-бортовые" >
+                                                        <span>4х осные</span>
+                                                    </label>
+                                                    <label class="text-radio">
+                                                        <input type="radio" name="stock-filter-5" value="all" data-name="Шторно-бортовые" >
+                                                        <span>Все</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="stock-filter__footer">
+                                            <button type="submit" class="btn main-btn main-btn--dark">
+                                                <span>Применить</span>
+                                            </button>
+                                            <button type="reset" class="btn text-btn">Сбросить фильтры</button>
+                                        </div>                                    
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice-filter">
+                        <div class="choice-filter__items"></div>
+                        <button type="button" class="choice-filter__reset">Очистить все</button>
+                    </div>
+                    <div class="cat-wrapper">
+                        @@include('_item-stock.html', {"nmb": 1, "title": "Зерновозы бортовые 46-60 м3 с вынесенной осью", "price": false, "label": false})
+                        @@include('_item-stock.html', {"nmb": 2, "title": "Бортовой полуприцеп 13,62 м", "price": true, "label": true})
+                        @@include('_item-stock.html', {"nmb": 3, "title": "Облегченные зерновозы бортовые 46-60 м3", "price": true, "label": false})
+                        @@include('_item-stock.html', {"nmb": 3, "title": "Облегченные зерновозы бортовые 46-60 м3", "price": true, "label": false})
+                        @@include('_item-stock.html', {"nmb": 1, "title": "Зерновозы бортовые 46-60 м3 с вынесенной осью", "price": false, "label": false})
+                        @@include('_item-stock.html', {"nmb": 2, "title": "Бортовой полуприцеп 13,62 м", "price": true, "label": true})
+                        @@include('_item-stock.html', {"nmb": 2, "title": "Бортовой полуприцеп 13,62 м", "price": true, "label": true})
+                        @@include('_item-stock.html', {"nmb": 3, "title": "Облегченные зерновозы бортовые 46-60 м3", "price": true, "label": false})
+                        @@include('_item-stock.html', {"nmb": 1, "title": "Зерновозы бортовые 46-60 м3 с вынесенной осью", "price": false, "label": false})
+                    </div>
+                    @@include('_pagination.html')
+                </div>
+            </section>
+            @@include('_faq.html')
+        </main>
+        @@include('_footer.html', {"main": false})
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>

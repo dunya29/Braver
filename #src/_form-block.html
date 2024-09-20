@@ -1,0 +1,42 @@
+<!--form-block-->
+<section class="section form-block" data-animation="fadeUp">
+    <div class="container">
+        <div class="form-block__inner">
+            <div class="form-block__l">
+                <div class="media-cover">
+                    <img src="img/form-block-bg.jpg" alt="">
+                </div>
+                <div class="form-block__content circle">
+                    <h2>Поможем подобрать модель и комплектацию техники</h2>
+                    <p>Оставьте свои контактные данные, и наш менеджер свяжется с Вами в ближайшее рабочее время</p>    
+                </div>
+            </div>
+            <div class="form-block__r">
+                <form class="form" onsubmit="event.preventDefault();formSuccess(this)">
+                    <div class="item-form">
+                        <input type="text" placeholder="Ваше имя">
+                        <span class="item-form__error"></span>
+                    </div>
+                    <div class="item-form">
+                        <input type="tel" placeholder="+7 (___) ___-__-__">
+                        <span class="item-form__error"></span>
+                    </div>
+                    <div class="item-form">
+                        <input type="email" placeholder="Email">
+                        <span class="item-form__error"></span>
+                    </div>
+                    <div class="form__footer">
+                        <label class="item-checkbox">
+                            <input type="checkbox">
+                            <span>Нажимая на кнопку, я принимаю условия <a href="#" target="_blank">Политики конфиденциальности</a></span>
+                        </label>
+                        <button type="submit" class="btn main-btn main-btn--dark">
+                            <span>Отправить</span>
+                            <div class="main-btn__icon"><svg><use xlink:href="img/icons/sprite.svg#link-arr"></use></svg></div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

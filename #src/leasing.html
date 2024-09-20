@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {   
+    "title": "Лизинг"
+})
+
+<body>
+    <div class="wrap">
+        @@include('_header.html', {
+            "main": false, "light": true,
+            "activeclass1": "",
+            "activeclass2": "",
+            "activeclass3": "",
+            "activeclass4": "",
+            "activeclass5": "",
+            "activeclass6": "",
+        })
+        <!--main-->  
+        <main class="main">
+            <!--breadcrumbs-->
+            <div class="breadcrumbs breadcrumbs--pos fixed-block">
+                <div class="container">
+                    <ul>
+                        <li><a href="#" class="link">Главная</a></li>
+                        <li>Лизинг</li>
+                    </ul>
+                </div>
+            </div>
+            <!--intro-->
+            <div class="section-sm intro">
+                <div class="container">
+                    <div class="media-cover">
+                        <picture>
+                            <source srcset="img/leasing-bg.webp" media="(min-width: 767.98px)" type="image/webp">
+                            <source srcset="img/leasing-bg.jpg" media="(min-width: 767.98px)">
+                            <source srcset="img/leasing-bg-mob.webp" type="image/webp">
+                            <source srcset="img/leasing-bg-mob.jpg"> 
+                            <img src="img/leasing-bg.jpg" alt="Лизинг BRAVER" data-animation="scale">
+                        </picture>
+                    </div>
+                    <div class="intro__content">
+                        <h1>Лизинг</h1>
+                    </div>
+                </div>
+            </div>
+            <!--about-->
+            <section class="section about about--leasing" data-animation="fadeUp">
+                 <div class="container">
+                     <div class="about__row">
+                         <h2>Лизинг <span>- это выгодно</span></h2>
+                         <div class="about__content">
+                            <div class="about__txt about__txt--grid">
+                                <p>Лизинг – это финансовый инструмент, который совмещает в себе достоинства аренды, кредита и рассрочки на автомобиль, прицепную и полуприцепную технику.</p>
+                                <p>Как это работает - лизинговая компания приобретает технику в собственность и передает её Вам во временное владение по договору лизинга. По истечении срока действия договора, техника переходит в Вашу собственность.</p>
+                            </div>
+                         </div>
+                     </div>
+                     <div class="about__row">
+                         <div class="about__info">
+                             @@include("_item-info2.html", {"icon": "note", "title": "Простая подача заявки", "txt": "Минимум документов"})
+                             @@include("_item-info2.html", {"icon": "timer", "title": "Быстрое одобрение", "txt": "Несколько дней"})
+                             @@include("_item-info2.html", {"icon": "percent", "title": "Снижение налоговой нагрузки", "txt": "специалистов трудятся на заводе"})
+                             @@include("_item-info2.html", {"icon": "discount", "title": "Не требует больших начальных вложений", "txt": "Доступное приобретение"})
+                         </div>
+                     </div>
+                 </div>
+            </section>
+            <!--accord-block-->
+            <section class="section accord-block" data-animation="fadeUp">
+                <div class="container">
+                    <div class="sec-top">
+                        <h2>Наши партнеры</h2>
+                    </div>
+                    <div class="accord-block__items">
+                        @@include("_item-partner.html", {"subtitle": "Генеральный партнёр Braver по лизингу", "title": "Европлан"})
+                        @@include("_item-partner.html", {"subtitle": "Генеральный партнёр Braver по лизингу", "title": "Европлан"})
+                        @@include("_item-partner.html", {"subtitle": "Генеральный партнёр Braver по лизингу", "title": "Европлан"})
+                        @@include("_item-partner.html", {"subtitle": "Генеральный партнёр Braver по лизингу", "title": "Европлан"})
+                        @@include("_item-partner.html", {"subtitle": "Генеральный партнёр Braver по лизингу", "title": "Европлан"})
+                    </div>
+                </div>
+            </section>
+            @@include('_faq.html')
+            @@include('_form-block.html')
+        </main>
+        @@include('_footer.html', {"main": false})
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+    @@include('_map.html')
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {   
+    "title": "Поиск"
+})
+
+<body>
+    <div class="wrap">
+        @@include('_header.html', {
+            "main": false, "light": false,
+            "activeclass1": "",
+            "activeclass2": "",
+            "activeclass3": "",
+            "activeclass4": "",
+            "activeclass5": "",
+            "activeclass6": "",
+        })
+        <!--main-->  
+        <main class="main">
+            @@include('_breadcrumbs.html', {
+                "page": "Поиск"            
+            })
+            <!--search-p-->
+            <section class="section search-p" data-animation="fadeUp">
+                <div class="container">
+                    <div class="sec-top">
+                        <h1 class="h2">Поиск</h1>
+                    </div>
+                    <!--search-form-->
+                    <form action="" class="mb-30 search-form" onsubmit="event.preventDefault();searchFormSuccess(this)">
+                        <div class="search-form__inner">
+                            <svg class="search-form__icon"><use xlink:href="img/icons/sprite.svg#search"></use></svg>     
+                            <input type="text" name="" placeholder="Поиск" value="Зерновоз">       
+                        </div>
+                        <button type="submit" class="btn main-btn main-btn--dark">
+                            <span>Найти</span>
+                        </button>
+                    </form>
+                    <div class="search-p__results">
+                        <div class="cat-wrapper">
+                            @@include('_item-stock.html', {"nmb": 1, "title": "Зерновозы бортовые 46-60 м3 с вынесенной осью", "price": false, "label": false})
+                            @@include('_item-stock.html', {"nmb": 2, "title": "Бортовой полуприцеп 13,62 м", "price": true, "label": true})
+                            @@include('_item-stock.html', {"nmb": 3, "title": "Облегченные зерновозы бортовые 46-60 м3", "price": true, "label": false})
+                            @@include('_item-stock.html', {"nmb": 3, "title": "Облегченные зерновозы бортовые 46-60 м3", "price": true, "label": false})
+                            @@include('_item-stock.html', {"nmb": 1, "title": "Зерновозы бортовые 46-60 м3 с вынесенной осью", "price": false, "label": false})
+                            @@include('_item-stock.html', {"nmb": 2, "title": "Бортовой полуприцеп 13,62 м", "price": true, "label": true})
+                        </div>
+                        @@include('_pagination.html')
+                    </div>
+                </div>
+            </section>
+            @@include('_faq.html')
+        </main>
+        @@include('_footer.html', {"main": false})
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>
