@@ -25,7 +25,7 @@ body {
   font-family: "Helvetica-Neue", sans-serif;
   font-size: 18px;
   font-weight: 400;
-  line-height: 89%;
+  line-height: 90%;
   color: $maincolor;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -389,7 +389,7 @@ p {
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: 100%;
+        width: calc(100% - 20px);
         max-width: 530px;
         margin: 0;
       }

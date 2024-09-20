@@ -471,6 +471,13 @@
             right: auto
         }
     }
+    @media (max-width: $bp7) {
+        &__items {
+            .text-radio span {
+                min-width: 87px;
+            }
+        }
+    }
 }
 .choice-filter {
     display: flex;
