@@ -504,6 +504,7 @@
         cursor: pointer;
     }
     &__reset {
+        color: $maincolor;
         margin-bottom: 30px;
     }
     @media (max-width: $bp1) {

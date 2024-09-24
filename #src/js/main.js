@@ -471,8 +471,12 @@ if (accordion) {
   accordion.forEach(item => {
     item.querySelector(".accordion__header").addEventListener("click", () => {
       item.parentNode.parentNode.querySelectorAll(".accordion").forEach(el => {
-        if (el.querySelector(".accordion__header").classList.contains("active")) {
-          smoothDrop(el.querySelector(".accordion__header"), el.querySelector(".accordion__body"))
+        if (el.querySelector(".accordion__header").classList.contains("active")) { 
+          smoothDrop(el.querySelector(".accordion__header"), el.querySelector(".accordion__body"))        
+          if (el.getBoundingClientRect().top < 0) {
+            let pos = scrollPos() + item.getBoundingClientRect().top - el.querySelector(".accordion__body").clientHeight - header.clientHeight - 10
+            window.scrollTo(0, pos)
+          } 
         }
       })
       smoothDrop(item.querySelector(".accordion__header"), item.querySelector(".accordion__body"))
@@ -483,8 +487,11 @@ if (accordion) {
 const readMore = document.querySelectorAll(".read-more")
 function readMoreFunc() {
   if (readMore) {
-    function showMoreBtn() {
-      readMore.forEach(item => {
+    readMore.forEach(item => {
+      let openTxt = item.querySelector(".read-more__btn").getAttribute("data-open")
+      let closeTxt = item.querySelector(".read-more__btn").getAttribute("data-close")
+
+      function showMoreBtn() {
         item.classList.remove("active")
         item.classList.add("more-hidden")
         let height = item.querySelector(".read-more__content").clientHeight
@@ -492,17 +499,21 @@ function readMoreFunc() {
         let fullHeight = item.querySelector(".read-more__content").clientHeight
         item.classList.add("more-hidden")
         if (fullHeight > height ) {
-            item.classList.add("btn-show")
+          item.classList.add("btn-show")
+          item.querySelector(".read-more__btn span").textContent = openTxt
         } else {
-            item.classList.remove("btn-show")
+          item.classList.remove("btn-show")
+        }
+      }
+      showMoreBtn()
+      let currWinW = window.innerWidth
+      window.addEventListener("resize", () => {
+        if (currWinW != window.innerWidth) {
+          showMoreBtn()
+          currWinW = window.innerWidth
         }
       })
-    }
-    showMoreBtn()
-    window.addEventListener("resize",showMoreBtn)
-    readMore.forEach(item => {
-      let openTxt = item.querySelector(".read-more__btn").getAttribute("data-open")
-      let closeTxt = item.querySelector(".read-more__btn").getAttribute("data-close")
+
       item.querySelector(".read-more__btn").addEventListener("click", () => {
         if (!item.classList.contains("active")) {
           item.classList.add("active")

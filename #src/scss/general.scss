@@ -301,6 +301,7 @@ p {
 }
 .stroke-btn {
   font-weight: 500;
+  color: $maincolor;
   padding: 11px;
   border-radius: 8px;
   border: 1px solid transparent;
@@ -907,7 +908,7 @@ p {
     .link-icon {
       justify-self: end;
       svg {
-        transform: rotate(90deg);
+        transform: translate(0,0) rotate(90deg);
       }
     }
     &.animated {
@@ -915,7 +916,7 @@ p {
         background: $maincolor;
         svg {
           stroke: $white;
-          transform: rotate(0);
+          transform: translate(0,0) rotate(0);
         }
       }
     }

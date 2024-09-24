@@ -576,6 +576,7 @@ p {
 
 .stroke-btn {
   font-weight: 500;
+  color: #202020;
   padding: 11px;
   border-radius: 8px;
   border: 1px solid transparent;
@@ -1244,9 +1245,9 @@ p {
 }
 
 .accordion__header .link-icon svg {
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
+  -webkit-transform: translate(0, 0) rotate(90deg);
+  -ms-transform: translate(0, 0) rotate(90deg);
+  transform: translate(0, 0) rotate(90deg);
 }
 
 .accordion__header.animated .link-icon {
@@ -1255,9 +1256,9 @@ p {
 
 .accordion__header.animated .link-icon svg {
   stroke: #FFFFFF;
-  -webkit-transform: rotate(0);
-  -ms-transform: rotate(0);
-  transform: rotate(0);
+  -webkit-transform: translate(0, 0) rotate(0);
+  -ms-transform: translate(0, 0) rotate(0);
+  transform: translate(0, 0) rotate(0);
 }
 
 .accordion__header .h3 {
@@ -3120,6 +3121,7 @@ p {
 }
 
 .choice-filter__reset {
+  color: #202020;
   margin-bottom: 30px;
 }
 
