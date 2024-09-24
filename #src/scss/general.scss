@@ -234,10 +234,10 @@ p {
     &:hover {
       span {
         color: $white;
-        background: #353535
+        background: rgba($maincolor, .85)
       }
       .main-btn__icon {
-        background: #353535;
+        background: rgba($maincolor, .85);
         svg {
           stroke: $white;
         }
@@ -555,6 +555,9 @@ p {
     height: 100%;
     pointer-events: none;
   }
+  &:hover {
+    background: rgba($maincolor, .85);
+  }
   @media (max-width: $bp2) {
     flex: 0 0 32px;
     width: 32px;
@@ -865,6 +868,7 @@ p {
   }
 }
 .link-icon {
+  display: block;
   flex: 0 0 43px;
   width: 43px;
   height: 43px;
@@ -980,7 +984,7 @@ p {
     margin: 5px;
     cursor: pointer;
     transition: all .3s linear;
-    &.active {
+    &:hover,&.active {
       color: $white;
       background: $maincolor;
     }
