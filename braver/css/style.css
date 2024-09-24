@@ -2821,6 +2821,11 @@ p {
   opacity: 0;
 }
 
+.item-stock__top .stroke-btn:hover {
+  color: #202020;
+  background: rgba(255, 255, 255, 0.8);
+}
+
 .item-stock__lbls {
   display: -webkit-box;
   display: -ms-flexbox;
