@@ -240,6 +240,30 @@
     }
 }
 .acc-product {
+    table {
+        width: 100%;
+        tr {
+            display: grid;
+            grid-template-columns: 1.1fr 2fr;
+            gap: 16px;
+            align-items: center;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba($maincolor, .1);
+            margin-bottom: 16px;
+            td {
+                font-size: 20px;
+                line-height: .9;
+                &:first-child {
+                    color: $maincolor;
+                }
+                &:last-child {
+                    color: $gray;
+                    justify-self: end;
+                    text-align: right;
+                }
+            }
+        }
+    }
 	.accordion__header {
         display: none;
     }
@@ -282,6 +306,14 @@
         }
     }
     @media (max-width: $bp1) {
+        table {
+            tr {
+                grid-template-columns: 1fr 2.2fr;
+                td {
+                    font-size: 18px;
+                }
+            }
+        }
         &__det {
             grid-template-columns: 1fr 2.2fr;
             span, p {
@@ -299,6 +331,13 @@
         margin-bottom: 10px;
         &:last-child {
             margin-bottom: 0
+        }
+        table {
+            tr {
+                td {
+                    font-size: 16px;
+                }
+            }
         }
         .accordion__header {
             padding: 15px 12px;
@@ -346,6 +385,18 @@
         }
     }
     @media (max-width: $bp4) {
+        table {
+            tr {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                td {
+                    &:last-child {
+                        justify-self: start;
+                        text-align: start;
+                    }
+                }
+            }
+        }
         &__det {
             grid-template-columns: auto 1fr;
             align-items: start;
