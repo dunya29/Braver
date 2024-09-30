@@ -288,7 +288,7 @@ function setErrorTxt(title = false, txt = false, btnTxt = false) {
 }
 // openSuccessMod
 function openSuccessMod(title = false, txt = false, btnTxt = false) {
-  setSuccessTxt(title = false, btnTxt = false)
+  setSuccessTxt(title,txt, btnTxt)
   openModal(successModal)
 }
 // openErrorMod
@@ -297,7 +297,7 @@ function openErrorMod(title = false, txt = false, btnTxt = false) {
   openModal(errorModal)
 }
 // formSuccess
-function formSuccess(form, title = false, btnTxt = false) {
+function formSuccess(form, title = false, txt = false, btnTxt = false) {
   form.querySelectorAll(".item-form").forEach(item => item.classList.remove("error"))
   form.querySelectorAll("input").forEach(inp => {
       if (!["hidden", "checkbox", "radio"].includes(inp.type)) {
@@ -313,7 +313,7 @@ function formSuccess(form, title = false, btnTxt = false) {
   if (form.querySelector(".file-form__items")) {
       form.querySelector(".file-form__items").innerHTML = ""
   }
-  openSuccessMod(title = false, txt = false, btnTxt = false)
+  openSuccessMod(title, txt, btnTxt)
 }
 // search form
 function searchFormSuccess(form) {
