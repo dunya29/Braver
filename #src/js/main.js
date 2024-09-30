@@ -293,7 +293,7 @@ function openSuccessMod(title = false, txt = false, btnTxt = false) {
 }
 // openErrorMod
 function openErrorMod(title = false, txt = false, btnTxt = false) {
-  setErrorTxt(title = false, btnTxt = false)
+  setErrorTxt(title,txt, btnTxt )
   openModal(errorModal)
 }
 // formSuccess
