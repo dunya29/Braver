@@ -827,7 +827,7 @@ if (catStockFilter && choiceFilter) {
       if (inp.type === 'checkbox') {
         inp.checked ? catfilter.setSelected(inp) : catfilter.removeSelected(index)
       } else if (inp.type === 'radio') {
-        catStockFilter.querySelectorAll(`input[name=${inp.name}]`).forEach(inp => catfilter.removeSelected(inp.getAttribute("data-id")))
+        catStockFilter.querySelectorAll(`input[name='${inp.name}']`).forEach(inp => catfilter.removeSelected(inp.getAttribute("data-id")))
         catfilter.setSelected(inp)
       }
     })
