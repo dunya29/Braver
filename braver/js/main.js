@@ -484,38 +484,12 @@ if (accordion) {
   })
 }
 // extra text
-const readMore = document.querySelectorAll(".read-more")
-function readMoreFunc() {
-  if (readMore) {
-    readMore.forEach(item => {
+document.addEventListener("click", e => {
+  document.querySelectorAll(".read-more").forEach(item => {
+    if (item.querySelector(".read-more__btn").contains(e.target)) {
       let openTxt = item.querySelector(".read-more__btn").getAttribute("data-open")
       let closeTxt = item.querySelector(".read-more__btn").getAttribute("data-close")
-
-      function showMoreBtn() {
-        item.classList.remove("active")
-        item.classList.add("more-hidden")
-        let height = item.querySelector(".read-more__content").clientHeight
-        item.classList.remove("more-hidden")
-        let fullHeight = item.querySelector(".read-more__content").clientHeight
-        item.classList.add("more-hidden")
-        if (fullHeight > height ) {
-          item.classList.add("btn-show")
-          item.querySelector(".read-more__btn span").textContent = openTxt
-        } else {
-          item.classList.remove("btn-show")
-        }
-      }
-      showMoreBtn()
-      let currWinW = window.innerWidth
-      window.addEventListener("resize", () => {
-        if (currWinW != window.innerWidth) {
-          showMoreBtn()
-          currWinW = window.innerWidth
-        }
-      })
-
-      item.querySelector(".read-more__btn").addEventListener("click", () => {
-        if (!item.classList.contains("active")) {
+      if (!item.classList.contains("active")) {
           item.classList.add("active")
           let height = item.querySelector(".read-more__content").clientHeight + "px"
           item.classList.remove("more-hidden")        
@@ -544,11 +518,36 @@ function readMoreFunc() {
               }, 500);
           }, 0);
       }
-      })
+    }
+  })
+})
+function showMoreBtn() {
+  if (document.querySelector(".read-more")) {
+    document.querySelectorAll(".read-more").forEach(item => {
+      let openTxt = item.querySelector(".read-more__btn").getAttribute("data-open")
+      item.classList.remove("active")
+      item.classList.add("more-hidden")
+      let height = item.querySelector(".read-more__content").clientHeight
+      item.classList.remove("more-hidden")
+      let fullHeight = item.querySelector(".read-more__content").clientHeight
+      item.classList.add("more-hidden")
+      if (fullHeight > height ) {
+        item.classList.add("btn-show")
+        item.querySelector(".read-more__btn span").textContent = openTxt
+      } else {
+        item.classList.remove("btn-show")
+      }
     })
+  }
 }
-}
-readMoreFunc() 
+showMoreBtn()
+let currWinW = window.innerWidth
+window.addEventListener("resize", () => {
+  if (currWinW != window.innerWidth) {
+    showMoreBtn()
+    currWinW = window.innerWidth
+  }
+})
 //share
 const share = document.querySelector(".share")
 if (share) {

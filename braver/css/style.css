@@ -2901,6 +2901,12 @@ p {
   margin: 0 15px 20px;
 }
 
+.sub-cat__filter a {
+  font-weight: 500;
+  color: #7b7b7b;
+  display: block;
+}
+
 .main-models__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;

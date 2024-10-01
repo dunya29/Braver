@@ -244,6 +244,11 @@
         & > * {
             margin: 0 15px 20px;
         }
+        a {
+            font-weight: 500;
+            color: #7b7b7b;
+            display: block;
+        }
     }
     @media (max-width: $bp1) {
         &__filter {
