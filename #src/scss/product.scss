@@ -243,6 +243,8 @@
     table {
         width: 100%;
         tr {
+            width: 100%!important;
+            height: auto!important;
             display: grid;
             grid-template-columns: 1.1fr 2fr;
             gap: 16px;
@@ -250,9 +252,14 @@
             padding-bottom: 16px;
             border-bottom: 1px solid rgba($maincolor, .1);
             margin-bottom: 16px;
+            &:last-child {
+                margin-bottom: 0;
+            }
             td {
                 font-size: 20px;
                 line-height: .9;
+                width: 100%!important;
+                height: auto!important;
                 &:first-child {
                     color: $maincolor;
                 }

@@ -878,6 +878,8 @@ p {
   transition: all .3s linear;
   svg {
     stroke: $maincolor;
+    width: 100%;
+    height: 100%;
     transition: all .3s linear;
   }
   @media (max-width: $bp2) {

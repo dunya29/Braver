@@ -783,7 +783,7 @@ if (stockFiltSec) {
   })
 }
 // filter inputs onchange
-const catStockFilter = document.querySelector(".stock-filter")
+/* const catStockFilter = document.querySelector(".stock-filter")
 const choiceFilter = document.querySelector(".choice-filter__items")
 if (catStockFilter && choiceFilter) {
   const catfilter = {
@@ -834,7 +834,7 @@ if (catStockFilter && choiceFilter) {
   choiceFilter.addEventListener("click", e => catfilter.selectedOnClick(e))
   document.querySelector(".choice-filter__reset").addEventListener("click", () => catfilter.resetFilter())
   catStockFilter.querySelector("form").addEventListener("reset", () => catfilter.resetFilter())
-}
+} */
 // section animation
 const animItem = document.querySelectorAll('[data-animation]')
 function animate() {
@@ -854,4 +854,60 @@ function animate() {
 if (animItem.length > 0) {
   animate()
   window.addEventListener("scroll", animate)
+}
+
+const catStockFilter = document.querySelector(".stock-filter")
+const choiceFilter = document.querySelector(".choice-filter__items")
+
+if (catStockFilter && choiceFilter) {
+  const catfilter = {
+    unCheckInp: function (inp) {
+      inp.checked = false
+      inp.removeAttribute("checked")
+    },
+    checkSelected: function() {
+      let inpArr = document.querySelectorAll("input:checked")
+      inpArr.forEach(item => {
+        catfilter.setSelected(item)
+      })
+    },
+    setSelected: function (item) {
+      let txt = item.parentNode.querySelector("span").textContent.toLowerCase()
+      let idx = item.getAttribute("data-id")
+      let inpName = item.getAttribute("data-name")
+      choiceFilter.insertAdjacentHTML("afterbegin", `<div class="choice-filter__item" data-target="${idx}">${inpName} ${txt}</div>`)
+    },
+    removeSelected: function (id) {
+      if (choiceFilter.querySelector(`[data-target="${id}"]`)) {
+        choiceFilter.querySelector(`[data-target="${id}"]`).remove()
+      }
+    },
+    selectedOnClick: function (e) {
+      choiceFilter.querySelectorAll(".choice-filter__item").forEach(item => {
+        if (item.contains(e.target)) {
+          let dataTarget = item.getAttribute("data-target")
+          this.unCheckInp(catStockFilter.querySelector(`label input[data-id=${dataTarget}]`))
+          item.remove()
+          catStockFilter.querySelector("form").submit()
+        }
+      })
+    },
+    resetFilter: function () {
+      catStockFilter.querySelectorAll("label input").forEach(inp => {
+        this.unCheckInp(inp)
+      })
+      choiceFilter.innerHTML = ""
+      closeDropdown(catStockFilter)
+    }
+  }
+  catfilter.checkSelected()
+  choiceFilter.addEventListener("click", e => catfilter.selectedOnClick(e))
+  document.querySelector(".choice-filter__reset").addEventListener("click", () => {
+    catfilter.resetFilter()
+    catStockFilter.querySelector("form").submit()
+  })
+  catStockFilter.querySelector("form").addEventListener("reset", () => {
+    catfilter.resetFilter()
+    catStockFilter.querySelector("form").submit()
+  })
 }

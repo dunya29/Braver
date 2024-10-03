@@ -1210,6 +1210,8 @@ p {
 
 .link-icon svg {
   stroke: #202020;
+  width: 100%;
+  height: 100%;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
@@ -2907,6 +2909,10 @@ p {
   display: block;
 }
 
+.sub-cat__filter a.active {
+  color: #202020;
+}
+
 .main-models__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -3428,6 +3434,8 @@ p {
 }
 
 .acc-product table tr {
+  width: 100% !important;
+  height: auto !important;
   display: grid;
   grid-template-columns: 1.1fr 2fr;
   gap: 16px;
@@ -3439,9 +3447,15 @@ p {
   margin-bottom: 16px;
 }
 
+.acc-product table tr:last-child {
+  margin-bottom: 0;
+}
+
 .acc-product table tr td {
   font-size: 20px;
   line-height: 0.9;
+  width: 100% !important;
+  height: auto !important;
 }
 
 .acc-product table tr td:first-child {

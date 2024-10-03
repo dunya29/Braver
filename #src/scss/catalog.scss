@@ -248,6 +248,9 @@
             font-weight: 500;
             color: #7b7b7b;
             display: block;
+            &.active {
+                color: $maincolor;
+            }
         }
     }
     @media (max-width: $bp1) {
