@@ -15,7 +15,7 @@
         &:after {
             content: "";
             display: block;
-            background: rgba($maincolor, .4);
+            background: rgba($maincolor, 0.4);
             top: 0;
             left: 0;
             width: 100%;
@@ -24,8 +24,11 @@
         }
     }
     &--main {
-        .intro__content h1 {
-            max-width: 1120px;
+        .intro__content {
+            h1,
+            .h1 {
+                max-width: 1120px;
+            }
         }
     }
     &--article {
@@ -33,16 +36,17 @@
             position: relative;
             img {
                 min-height: 314px;
-                position: relative
+                position: relative;
             }
         }
     }
-	&__content {
+    &__content {
         padding: 200px 0 60px;
         margin-top: auto;
         position: relative;
         z-index: 1;
-        h1 {
+        h1,
+        .h1 {
             color: $white;
         }
         ul {
@@ -68,14 +72,14 @@
             }
         }
     }
-	&__bot {
+    &__bot {
         max-width: 1120px;
         display: grid;
         grid-template-columns: 1fr 330px;
         gap: 50px;
         margin-top: 30px;
     }
-	&__txt {
+    &__txt {
         p {
             color: $white;
             max-width: 496px;
@@ -89,7 +93,7 @@
     @media (max-width: $bp1) {
         &--main {
             .intro__content {
-                h1 {
+                h1, .h1 {
                     max-width: 926px;
                 }
             }
@@ -112,8 +116,11 @@
     }
     @media (max-width: $bp2) {
         &--main {
-            .intro__content h1 {
-                max-width: 550px;
+            .intro__content {
+                h1,
+                .h1 {
+                    max-width: 550px;
+                }
             }
         }
         &--vacancy {

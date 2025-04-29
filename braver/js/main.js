@@ -272,16 +272,18 @@ if (dropdown) {
 }
 //setSuccessTxt
 function setSuccessTxt(title = false, txt = false, btnTxt = false) {
-  successModal.querySelector("h3").textContent = title ? title : "Заявка отправлена"
-  successModal.querySelector(".main-btn span").textContent = btnTxt ? btnTxt : "Закрыть"
+  let lang = document.querySelector(".lang a.active").textContent.toLowerCase()
+  successModal.querySelector("h3").textContent = title ? title : lang == "ru" ? "Заявка отправлена" : "Your request has been sent"
+  successModal.querySelector(".main-btn span").textContent = btnTxt ? btnTxt : lang == "ru" ? "Закрыть" : "Close"
   if (txt) {
     successModal.querySelector("p").textContent = txt
   }
 }
 //setErrorTxt
 function setErrorTxt(title = false, txt = false, btnTxt = false) {
-  errorModal.querySelector("h3").textContent = title ? title : "Что-то пошло не так"
-  errorModal.querySelector(".main-btn span").textContent = btnTxt ? btnTxt : "Закрыть"
+  let lang = document.querySelector(".lang a.active").textContent.toLowerCase()
+  errorModal.querySelector("h3").textContent = title ? title : lang == "ru" ? "Что-то пошло не так" : "Something went wrong"
+  errorModal.querySelector(".main-btn span").textContent = btnTxt ? btnTxt : lang == "ru" ? "Закрыть" : "Close" 
   if (txt) {
     errorModal.querySelector("p").textContent = txt
   }
